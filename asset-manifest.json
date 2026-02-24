@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/abhishek-digital-identity/static/css/main.b6143d99.css",
+    "main.js": "/abhishek-digital-identity/static/js/main.b9e90e1e.js",
+    "index.html": "/abhishek-digital-identity/index.html",
+    "main.b6143d99.css.map": "/abhishek-digital-identity/static/css/main.b6143d99.css.map",
+    "main.b9e90e1e.js.map": "/abhishek-digital-identity/static/js/main.b9e90e1e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b6143d99.css",
+    "static/js/main.b9e90e1e.js"
+  ]
+}
