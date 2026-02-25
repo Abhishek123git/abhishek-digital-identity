@@ -45,7 +45,7 @@ const Contact = () => {
                   </Link> 
                 </div>
                 <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
-                  <img className="w-full h-auto rounded-lg " alt="Gmail" src="/images/outlook.webp" />
+                  <img className="w-full h-auto rounded-lg " alt="Gmail" src="./images/outlook.webp" />
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ const Contact = () => {
                   </Link> 
                 </div>
                 <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
-                  <img className="w-full h-auto rounded-lg " alt="Gmail" src="/images/github.webp" />
+                  <img className="w-full h-auto rounded-lg " alt="Gmail" src="./images/github.webp" />
                 </div>
               </div>
             </div>

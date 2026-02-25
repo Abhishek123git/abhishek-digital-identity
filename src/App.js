@@ -18,6 +18,7 @@ function App() {
         <main className="flex-grow flex flex-col bg-[#262626]">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/abhishek-digital-identity" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="resume" element={<Resume />} />
             <Route path="contact" element={<Contact />} />

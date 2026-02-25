@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <section className="w-full max-w-6xl py-8 sm:py-16 mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-          <span className="text-white flex items-center">Hi, I am <img className="w-[50px] h-[50px] inline-block ml-4" src="/gifs/wave.gif" alt="gif" /></span>
+          <span className="text-white flex items-center">Hi, I am <img className="w-[50px] h-[50px] inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.gif`} alt="gif" /></span>
           <span className="mt-4 block text-emerald-500">Abhishek Kumar</span>
         </h1>
         <div className="grid grid-cols-2 gap-4 mt-6 w-full text-base text-white/75 text-justify items-stretch">
@@ -27,7 +27,7 @@ const Home = () => {
             <a className="underline decoration-emerald-500 underline-offset-2 hover:text-emerald-500 hover:no-underline hover:decoration-white" href="/contact">Let's create something great together!</a>
           </div>
           <div className="flex justify-center items-center">
-            <img className="rounded-full" src="/images/abhishek_pro.webp" alt="abhishek_pro" />
+            <img className="rounded-full" src={`${process.env.PUBLIC_URL}/images/abhishek_pro.webp`} alt="abhishek_pro" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center max-w-5xl mt-16 border rounded-lg border-gray-600 mx-auto p-6 hover:bg-[#303952] hover:border-0 group">
