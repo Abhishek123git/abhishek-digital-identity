@@ -1,5 +1,5 @@
 import { MdStarPurple500, TbBrandCSharp, BiLogoJava, GrReactjs, TbBrandJavascript, BsFillDatabaseFill, FaGithub, FaBootstrap, DiJqueryLogo, SiJira, DiVisualstudio, VscVscode, CgMoreO, ImArrowRight } from "../icons";
-import { JourneyComponent, CodingMilestones, Counter } from "../sub-components/About";
+import { JourneyComponent, CodingMilestones, Counter, SectionHeader } from "../sub-components/About";
 const About = () => {
 
   return (
@@ -57,13 +57,9 @@ const About = () => {
       </section>
 
       {/* Journey section start */}
-      <section className="flex flex-col gap-3 p-2 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-2xl md:text-4xl text-purple-500 uppercase">the journey</p>
-          <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium ">Humble beginnings to mastering tech: my evolving path</p>
-          <img className="w-[50px] h-[50px] rounded-full" src="/gifs/journey.gif" alt="gif" />
-        </div>
-        <div className="w-full mx-auto space-y-6 my-4">
+      <section className="flex flex-col gap-3 p-2 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">        
+        <SectionHeader title="the journey" subtitle="Humble beginnings to mastering tech: my evolving path" description="This timeline highlights a clear progression from early curiosity in coding to professional expertise in full stack development.It showcases key milestones in education, hands‑on projects, and industry roles, reflecting consistent growth, adaptability, and a commitment to building scalable, innovative solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/journey.gif`} />
+        <div className="w-full mx-auto space-y-4 my-4">
           <JourneyComponent year="2015" headerText="Class 10th" descriptionText="Growing up, I was always curious about technology, but it was in 10th grade, through my cousins, that I was introduced to coding. They sparked my interest, and that’s when I decided to explore Python. Since then, I’ve been hooked, diving deeper into the world of coding and development." />
           <JourneyComponent year="2018" headerText="Class 12th" descriptionText="In 12th grade, I deepened my understanding of programming concepts and began working on more complex projects. My interest in web development grew, and I started exploring frameworks like React and Node.js." />
           <JourneyComponent year="2019" headerText="B.Tech First Year" descriptionText="In my first year of B.Tech, I dove into the fundamentals of programming by learning the C language through the PPS subject. Soon after, I discovered my favorite language, C++, and began my Data Structures and Algorithms journey." />
@@ -75,20 +71,13 @@ const About = () => {
       {/* Journey section end */}
 
       {/* Coding Milestones start */}
-      <section className="grid grid-rows-2 gap-2 p-3 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">        
-        <div className="flex flex-col items-center gap-4 h-auto">
-          <p className="text-2xl md:text-4xl text-purple-500 uppercase">Coding Milestones</p>
-          <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium ">Validated skills through coding challenges and contests</p>
-          <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans text-center">A showcase of my journey through leading coding platforms, where consistent practice and competitive challenges have validated my problem‑solving skills. 
-          From tackling algorithmic puzzles on LeetCode, earning badges on HackerRank, and competing in CodeChef contests, to exploring concepts on GeeksforGeeks — each milestone reflects dedication, growth, and a commitment to mastering the craft of programming.
-          </p>
-          <img className="w-[50px] h-[50px] rounded-full" src="/gifs/coding.gif" alt="gif" />
-        </div>
-        <div className="grid grid-cols-4 gap-2 p-3 w-full mx-auto">                          
+      <section className="grid grid-rows-2 gap-2 p-3 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
+        <SectionHeader title="Coding Milestones" subtitle="Validated skills through coding challenges and contests" description="A showcase of my journey through leading coding platforms, where consistent practice and competitive challenges have validated my problem‑solving skills. From tackling algorithmic puzzles on LeetCode, earning badges on HackerRank, and competing in CodeChef contests, to exploring concepts on GeeksforGeeks — each milestone reflects dedication, growth, and a commitment to mastering the craft of programming.This timeline highlights a clear progression from early curiosity in coding to professional expertise in full stack development.It showcases key milestones in education, hands‑on projects, and industry roles, reflecting consistent growth, adaptability, and a commitment to building scalable, innovative solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/coding.gif`} />
+        <div className="grid grid-cols-4 gap-2 p-3 w-full mx-auto">
           <CodingMilestones alt="LeetCode" src={`${process.env.PUBLIC_URL}/images/leetcode.webp`} link="https://leetcode.com/u/abhishek1445747/" />
           <CodingMilestones alt="HackerRank" src={`${process.env.PUBLIC_URL}/images/hackerrank.webp`} link="https://www.hackerrank.com/profile/mp1445747" />
           <CodingMilestones alt="CodeChef" src={`${process.env.PUBLIC_URL}/images/codechef.webp`} link="https://www.codechef.com/users/codermjo123" />
-          <CodingMilestones alt="GeeksforGeeks" src={`${process.env.PUBLIC_URL}/images/geeksforgeeks.webp`} link="https://www.geeksforgeeks.org/profile/abhishekdeveloper" />                    
+          <CodingMilestones alt="GeeksforGeeks" src={`${process.env.PUBLIC_URL}/images/geeksforgeeks.webp`} link="https://www.geeksforgeeks.org/profile/abhishekdeveloper" />
         </div>
       </section>
       {/* Coding Milestones end */}

@@ -2,6 +2,19 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { SlCalender } from "react-icons/sl";
 
+// Section header component for displaying title, subtitle, description, and an image
+export function SectionHeader({ title, subtitle, description, imgSrc }) {
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
+      <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
+      <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans text-center">{description}</p>
+      <img className="w-[50px] h-[50px] rounded-full" src={imgSrc} alt="gif" />
+    </div>
+  );
+}
+
+// Component for displaying a journey timeline with year, header, and description
 export function JourneyComponent({ year, headerText, descriptionText }) {
 
     return (
@@ -16,6 +29,7 @@ export function JourneyComponent({ year, headerText, descriptionText }) {
 
 }
 
+// Component for displaying coding milestones with an image and a link
 export function CodingMilestones({ alt, src, link }) {
   return (
       <Link to={link} target="_blank">
@@ -26,6 +40,7 @@ export function CodingMilestones({ alt, src, link }) {
   );
 }
 
+// Counter component for displaying animated count with a label
 export function Counter({ end, duration, label }) {
   const [count, setCount] = useState(0);
   useEffect(() => {

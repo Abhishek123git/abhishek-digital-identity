@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {QrModal, CvFormatDownloadModal} from "../sub-components/Model";
 import { Link } from "react-router-dom";
-import { GiCheckMark, FaDownload, IoQrCodeOutline } from "../icons";
 import QRCode from "react-qr-code";
+import {QrModal, CvFormatDownloadModal} from "../sub-components/Model";
+import { GiCheckMark, FaDownload, IoQrCodeOutline } from "../icons";
+import { SectionHeader } from "../sub-components/Home";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ const Home = () => {
             <a className="underline decoration-emerald-500 underline-offset-2 hover:text-emerald-500 hover:no-underline hover:decoration-white" href="/contact">Let's create something great together!</a>
           </div>
           <div className="flex justify-center items-center">
-            <img className="rounded-full" src={`${process.env.PUBLIC_URL}/images/abhishek_pro.webp`} alt="abhishek_pro" />
+            <img className="rounded-full" src={`${process.env.PUBLIC_URL}/images/Abhishek_pro.webp`} alt="abhishek_pro" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center max-w-5xl mt-16 border rounded-lg border-gray-600 mx-auto p-6 hover:bg-[#303952] hover:border-0 group">
@@ -63,11 +64,8 @@ const Home = () => {
       </section>
 
       {/* Technologies section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-2xl md:text-4xl text-purple-500 uppercase">technologies</p>
-          <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium ">Here's what I typically work with</p>
-        </div>
+      <section className="w-full max-w-6xl py-8 mx-auto">        
+        <SectionHeader title="technologies" subtitle="Here's what I typically work with" description="This section highlights my core technical expertise across programming languages, front‑end frameworks, back‑end platforms, tools, and databases—demonstrating versatility and proficiency in full stack development. This version keeps it sharp and professional, perfect for portfolios where recruiters want to quickly grasp your skill set." imgSrc={`${process.env.PUBLIC_URL}/gifs/settings.gif`} />
         <ul className="mx-auto mt-6 box-border columns-1 gap-[1em] md:columns-2 lg:columns-3">
           {/* Languages */}
           <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
@@ -224,11 +222,8 @@ const Home = () => {
       {/* Technology section end */}
 
       {/* Experiences section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-2xl md:text-4xl text-purple-500 uppercase">Experiences</p>
-          <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium ">A curated chronicle of professional engagements</p>
-        </div>
+      <section className="w-full max-w-6xl py-8 mx-auto">        
+        <SectionHeader title="experiences" subtitle="A curated chronicle of professional engagements" description="Full stack developer with experience in C#, ASP.NET, SQL Server, and Web API (MVC), contributing to VMS projects and optimizing critical functionalities. Developed and maintained flentis.com across backend, frontend, and SEO. Hands-on with ReactJS, React Hook Form, and Zod validation for building responsive, modern applications." imgSrc={`${process.env.PUBLIC_URL}/gifs/multitasking.gif`} />
         <div className="p-10">
           <div className="flex flex-col text-white bg-black/50 rounded-md">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif my-5 lg:px-14">Associate Software Engineer</h1>
@@ -248,7 +243,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="h-48 sm:h-60 w-full sm:w-80">
-                <img src="/images/flentis.webp" alt="flentis" className="w-full h-full object-cover rounded-md" />
+                <img src={`${process.env.PUBLIC_URL}/images/flentis.webp`} alt="flentis" className="w-full h-full object-cover rounded-md" />
               </div>
             </div>
           </div>
@@ -257,11 +252,8 @@ const Home = () => {
       {/* Experiences section end */}
 
       {/* Skills section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-2xl md:text-4xl text-purple-500 uppercase">skills</p>
-          <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">My key expertises and technical proficiencies</p>
-        </div>
+      <section className="w-full max-w-6xl py-8 mx-auto">        
+        <SectionHeader title="skills" subtitle="My key expertises and technical proficiencies" description="Skilled in full stack development with strong expertise in C#, ASP.NET, SQL, and modern front-end frameworks like ReactJS, Tailwind, and Bootstrap — delivering scalable, responsive, and cloud-ready solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/rating.gif`} />
         <div className="flex p-10 max-w-6xl gap-4 flex-wrap justify-center text-white">
           <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">JavaScript</div>
           <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">ReactJS</div>
@@ -283,16 +275,12 @@ const Home = () => {
       {/* Skills section end */}
 
       {/* Certificates & Badges  section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">
-        <div className="flex flex-col items-center gap-4">
-          <p className="text-2xl md:text-4xl text-purple-500 uppercase">Certificates &amp; Badges</p>
-          <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">Recognized Skills and Professional Achievements</p>
-        </div>
-
+      <section className="w-full max-w-6xl py-8 mx-auto">        
+        <SectionHeader title="certificates & badges" subtitle="Recognized Skills and Professional Achievements" description="Certified by leading platforms like Coding Ninjas, CodeChef, and HackerRank — showcasing proven skills, problem-solving expertise, and a commitment to continuous learning." imgSrc={`${process.env.PUBLIC_URL}/gifs/certificate.gif`} />
         <div className="overflow-hidden relative sm:my-10 text-base text-gray-400">
           <div className="flex space-x-6 animate-scrollRight items-stretch hover:animate-none">
             <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src="/images/csharp.webp" alt="HackerRank" className="w-full h-auto object-cover" />
+              <img src={`${process.env.PUBLIC_URL}/images/csharp.webp`} alt="HackerRank" className="w-full h-auto object-cover" />
               <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
                 <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">HackerRank</span></span>
                 <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">11 Oct 2025</span></span>
@@ -302,7 +290,7 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src="/images/udemy_netcore.webp" alt="Udemy" className="w-full h-auto object-cover" />
+              <img src={`${process.env.PUBLIC_URL}/images/udemy_netcore.webp`} alt="Udemy" className="w-full h-auto object-cover" />
               <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
                 <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">Udemy</span></span>
                 <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">19 March 2023</span></span>
@@ -312,7 +300,7 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src="/images/codingninja_java.webp" alt="codingninjas" className="w-full h-auto object-cover" />
+              <img src={`${process.env.PUBLIC_URL}/images/codingninja_java.webp`} alt="codingninjas" className="w-full h-auto object-cover" />
               <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
                 <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">CodingNinjas</span></span>
                 <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">15 Feb 2023</span></span>
@@ -322,7 +310,7 @@ const Home = () => {
             </div>
 
             <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src="/images/codechef_javascript.webp" alt="codechef" className="w-full h-auto object-cover" />
+              <img src={`${process.env.PUBLIC_URL}/images/codechef_javascript.webp`} alt="codechef" className="w-full h-auto object-cover" />
               <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
                 <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">CodeChef</span></span>
                 <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">20 May 2025</span></span>
