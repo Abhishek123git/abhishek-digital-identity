@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 //Menu links
 import Home from "./components/Home";
 import About from './components/About';
-import Resume from './components/Resume';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/abhishek-digital-identity" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="resume" element={<Resume />} />
+            <Route path="about" element={<About />} /> 
+            <Route path="projects" element={<Projects />} />     
             <Route path="contact" element={<Contact />} />
           </Routes>
         </main>

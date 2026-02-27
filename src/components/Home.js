@@ -45,8 +45,8 @@ const Home = () => {
               <IoQrCodeOutline className="w-8 h-auto my-4 text-[#0abde3]" />
               <h1 className="text-lg font-bold font-openSans text-white">Scan QR Code</h1>
               <p className="text-sm font-semibold text-gray-600 mb-3 max-w-80 mx-4 text-center">Scan the QR code to open resume in mobile and download it</p>
-              <div className="p-3 border border-gray-400 rounded-md">
-                <QRCode size={140}  fgColor="#F8EFBA" bgColor="black" level="H" value="https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link" />
+              <div className="p-3 bg-[#dfe6e9] rounded-xl">
+                <QRCode size={140}  fgColor="#dfe6e9" bgColor="black" level="H" value="https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link" />
               </div>
             </QrModal>
             <CvFormatDownloadModal isOpen={isCvFormatOpen} onClose={() => setIsCvFormatOpen(false)} >
