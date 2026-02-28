@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { LuLinkedin, PiMouseMiddleClickDuotone, FaGithub, BiLogoGmail } from "../icons";
 
-export const myObject = [
+const myObject = [
     {
         title: "LinkedIn",
         subtitle: "Connect with me on LinkedIn",
@@ -28,30 +28,6 @@ export const myObject = [
     }
 ];
 
-function SociaclMediaCards({data}) {
-    
-    return (
-        <div className="flex-1 flex flex-col items-center p-3 rounded-xl border border-gray-600 bg-black">
-            <div className="w-full rounded-xl bg-transparent mx-auto my-2">
-                <div className="flex basis-full flex-col p-4 w-full h-auto ">
-                    <h3 className="w-full !pb-2 !m-0 font-bold flex flex-row justify-between">{data.title}
-                        {data.icon1}
-                    </h3>
-                    <div className="flex flex-row gap-2">
-                        <span className="text-slate-500 py-2">{data.subtitle}</span>
-                        <Link className="flex clickLink justify-center items-center border-2 border-dashed rounded-[50%] p-2" to={data.link} target="_blank" rel="noreferrer">
-                            {data.icon2}
-                        </Link>
-                    </div>
-                    <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
-                        <img className="w-full h-auto rounded-lg " alt={data.title} src={data.src} />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 // Section header component for displaying title, subtitle, description, and an image
 export function SectionHeader({ title, subtitle, description, imgSrc }) {
   return (
@@ -65,11 +41,28 @@ export function SectionHeader({ title, subtitle, description, imgSrc }) {
 }
 
 export function SocialMediaSection() {
-  return (
-    <div className="flex justify-center items-center px-2 py-4 text-base gap-2">
-      {myObject.map((item, index) => (
-        <SociaclMediaCards key={index} data={item} />
-      ))}
-    </div>
-  );
+    return (
+        <div className="flex justify-center items-center px-2 py-4 text-base gap-2">
+            {myObject.map((item, index) => (
+                <div key={index} className="flex-1 flex flex-col items-center p-3 rounded-xl border border-gray-600 bg-black">
+                    <div className="w-full rounded-xl bg-transparent mx-auto my-2">
+                        <div className="flex basis-full flex-col p-4 w-full h-auto ">
+                            <h3 className="w-full !pb-2 !m-0 font-bold flex flex-row justify-between">{item.title}
+                                {item.icon1}
+                            </h3>
+                            <div className="flex flex-row gap-2">
+                                <span className="text-slate-500 py-2">{item.subtitle}</span>
+                                <Link className="flex clickLink justify-center items-center border-2 border-dashed rounded-[50%] p-2" to={item.link} target="_blank" rel="noreferrer">
+                                    {item.icon2}
+                                </Link>
+                            </div>
+                            <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
+                                <img className="w-full h-auto rounded-lg " alt={item.title} src={item.src} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
 }

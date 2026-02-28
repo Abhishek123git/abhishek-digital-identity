@@ -1,7 +1,7 @@
 .page-header{
   background: linear-gradient(135deg, #6b73ff 20%, #000dff 80%);
-  border-bottom-left-radius: 40%;
-  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 
 .glow {  
@@ -31,4 +31,22 @@
       0 0 70px #ff4da6,
       0 0 80px #ff4da6;
   }
+}
+
+.clickLink{
+width: 40px;
+height: auto;
+}
+
+.clickLink:hover{
+    border-style: groove;
+    border-color: #fffa65;
+    box-shadow: 0 0 5px white, 0 0 5px white;
+    transition: all 0.3s ease-in-out;
+}
+
+.clickmouse:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    color: #fffa65;
 }
