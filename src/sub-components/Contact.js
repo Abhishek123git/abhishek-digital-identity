@@ -35,7 +35,7 @@ export function SectionHeader({ title, subtitle, description, imgSrc }) {
       <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
       <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
       <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans text-center">{description}</p>
-      <img className="w-[50px] h-[50px] rounded-full" src={imgSrc} alt="gif" />
+      <img className="w-[50px] h-[50px] rounded-full" src={imgSrc} alt="gif" loading="lazy" />
     </div>
   );
 }
@@ -57,7 +57,7 @@ export function SocialMediaSection() {
                                 </Link>
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
-                                <img className="w-full h-auto rounded-lg " alt={item.title} src={item.src} />
+                                <img className="w-full h-auto rounded-lg " alt={item.title} src={item.src} loading="lazy" />
                             </div>
                         </div>
                     </div>

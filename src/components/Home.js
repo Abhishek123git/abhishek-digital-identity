@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import QRCode from "react-qr-code";
-import {QrModal, CvFormatDownloadModal} from "../sub-components/Model";
+import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";
 import { GiCheckMark, FaDownload, IoQrCodeOutline } from "../icons";
-import { SectionHeader } from "../sub-components/Home";
+import { SectionHeader, CertificateCard, Technologies } from "../sub-components/Home";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <section className="w-full max-w-6xl py-8 sm:py-16 mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-          <span className="text-white flex items-center">Hi, I am <img className="w-[50px] h-[50px] inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.gif`} alt="gif" /></span>
+          <span className="text-white flex items-center">Hi, I am <img className="w-[50px] h-[50px] inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.gif`} alt="gif" loading="lazy" /></span>
           <span className="mt-4 block text-emerald-500">Abhishek Kumar</span>
         </h1>
         <div className="grid grid-cols-2 gap-4 mt-6 w-full text-base text-white/75 text-justify items-stretch">
@@ -28,7 +28,7 @@ const Home = () => {
             <a className="underline decoration-emerald-500 underline-offset-2 hover:text-emerald-500 hover:no-underline hover:decoration-white" href="/contact">Let's create something great together!</a>
           </div>
           <div className="flex justify-center items-center">
-            <img className="rounded-full" src={`${process.env.PUBLIC_URL}/images/Abhishek_pro.webp`} alt="abhishek_pro" />
+            <img className="rounded-full w-[300px] h-[300px]" src={`${process.env.PUBLIC_URL}/images/Abhishek_pro.webp`} alt="abhishek_pro" loading="lazy" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center max-w-5xl mt-16 border rounded-lg border-gray-600 mx-auto p-6 hover:bg-[#303952] hover:border-0 group">
@@ -46,183 +46,78 @@ const Home = () => {
               <h1 className="text-lg font-bold font-openSans text-white">Scan QR Code</h1>
               <p className="text-sm font-semibold text-gray-600 mb-3 max-w-80 mx-4 text-center">Scan the QR code to open resume in mobile and download it</p>
               <div className="p-3 bg-[#dfe6e9] rounded-xl">
-                <QRCode size={140}  fgColor="#dfe6e9" bgColor="black" level="H" value="https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link" />
+                <QRCode size={140} fgColor="#dfe6e9" bgColor="black" level="H" value="https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link" />
               </div>
             </QrModal>
             <CvFormatDownloadModal isOpen={isCvFormatOpen} onClose={() => setIsCvFormatOpen(false)} >
               <FaDownload className="w-6 h-auto my-4 text-[#0abde3]" />
               <h1 className="text-lg font-bold font-openSans text-white">Download CV in Different Formats</h1>
               <p className="text-sm font-semibold text-gray-600 mb-3 max-w-80 mx-4 text-center">Choose your preferred format to download the CV</p>
-            </CvFormatDownloadModal>  
+            </CvFormatDownloadModal>
           </div>
           <span className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium group-hover:text-[#cc8e35] transition-colors duration-300">Same Story, Multiple Formats, One Professional Journey Choose Your Format</span>
         </div>
         <p className="font-serif text-white/75 text-5xl flex flex-wrap justify-center items-center leading-relaxed text-center font-light px-4 sm:px-6 md:px-8 mt-28">
-          I am a <span className="text-purple-500 mx-3">full‑stack developer</span> who thrives at the intersection of creativity and technology, transforming challenges into opportunities and ideas into impactful digital experiences. 
+          I am a <span className="text-purple-500 mx-3">full‑stack developer</span> who thrives at the intersection of creativity and technology, transforming challenges into opportunities and ideas into impactful digital experiences.
           With an unwavering passion for innovation, I craft solutions that don’t just solve problems but inspire progress, pushing boundaries to build the future of the web.
         </p>
       </section>
 
       {/* Technologies section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">        
+      <section className="w-full max-w-6xl py-8 mx-auto">
         <SectionHeader title="technologies" subtitle="Here's what I typically work with" description="This section highlights my core technical expertise across programming languages, front‑end frameworks, back‑end platforms, tools, and databases—demonstrating versatility and proficiency in full stack development. This version keeps it sharp and professional, perfect for portfolios where recruiters want to quickly grasp your skill set." imgSrc={`${process.env.PUBLIC_URL}/gifs/settings.gif`} />
         <ul className="mx-auto mt-6 box-border columns-1 gap-[1em] md:columns-2 lg:columns-3">
           {/* Languages */}
           <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
-            <div className="flex max-w-6xl items-center justify-between border-b-2 border-red-500">
-              <div className="text-lg leading-8 font-semibold tracking-tight text-white">Languages</div>
+            <div className="flex border-b-2 border-red-500">
+              <div className="text-lg font-semibold text-white">Languages</div>
             </div>
-            <ul className="mx-auto mt-8 grid grid-cols-3 gap-9 text-center lg:mx-0 lg:max-w-none">
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="C#" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/csharp.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">C#</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block" >
-                  <img alt="JavaScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/javascript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">JavaScript</span>
-                </div></li><li className="relative">
-                <div className="group inline-block" >
-                  <img alt="Python" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/java.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">Jab</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block" >
-                  <img alt="TypeScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/typescript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">TypeScript</span>
-                </div>
-              </li>
+            <ul className="mx-auto mt-8 flex flex-row gap-9 justify-between text-center ">
+              <Technologies name="C#" src="https://svgl.app/library/csharp.svg" />
+              <Technologies name="JavaScript" src="https://svgl.app/library/javascript.svg" />
+              <Technologies name="TypeScript" src="https://svgl.app/library/typescript.svg" />
             </ul>
           </li>
           {/* Backends */}
           <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
-            <div className="flex max-w-6xl items-center justify-between border-b-2 border-red-500">
-              <div className="text-lg leading-8 font-semibold tracking-tight text-white">Backend</div>
+            <div className="flex border-b-2 border-red-500">
+              <div className="text-lg font-semibold text-white">Backend</div>
             </div>
-            <ul className="mx-auto mt-8 grid grid-cols-3 gap-9 text-center lg:mx-0 lg:max-w-none">
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="C#" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/csharp.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">C#</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="JavaScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/javascript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">JavaScript</span>
-                </div></li><li className="relative">
-                <div className="group inline-block">
-                  <img alt="Python" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/java.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">Jab</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="TypeScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/typescript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">TypeScript</span>
-                </div>
-              </li>
+            <ul className="mx-auto mt-8 flex flex-row justify-between gap-9 text-center ">
+              <Technologies name="Java" src="https://svgl.app/library/java.svg" />
+              <Technologies name="C#" src="https://svgl.app/library/csharp.svg" />
+              <Technologies name="ASP.NET" src="https://svgl.app/library/dotnet.svg" />
             </ul>
           </li>
           {/* Frontends */}
           <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
-            <div className="flex max-w-6xl items-center justify-between border-b-2 border-red-500">
-              <div className="text-lg leading-8 font-semibold tracking-tight text-white">Frontends</div>
+            <div className="flex border-b-2 border-red-500">
+              <div className="text-lg font-semibold text-white">Frontends</div>
             </div>
-            <ul className="mx-auto mt-8 grid grid-cols-3 gap-9 text-center lg:mx-0 lg:max-w-none">
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="C#" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/csharp.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">C#</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="JavaScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/javascript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">JavaScript</span>
-                </div></li><li className="relative">
-                <div className="group inline-block" >
-                  <img alt="Python" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/java.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">Jab</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="TypeScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/typescript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">TypeScript</span>
-                </div>
-              </li>
+            <ul className="mx-auto mt-8 flex flex-row justify-between gap-9 text-center ">              
+              <Technologies name="HTML5" src="https://svgl.app/library/html5.svg" />
+              {/* <Technologies name="React" src="https://www.svgrepo.com/svg/374032/reactjs" /> */}
+              <Technologies name="Tailwind CSS" src="https://svgl.app/library/tailwindcss.svg" />
+              <Technologies name="Bootstrap" src="https://svgl.app/library/bootstrap.svg" />
             </ul>
           </li>
           {/* Databases */}
           <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
-            <div className="flex max-w-6xl items-center justify-between border-b-2 border-red-500">
-              <div className="text-lg leading-8 font-semibold tracking-tight text-white">Databases</div>
+            <div className="flex border-b-2 border-red-500">
+              <div className="text-lg font-semibold text-white">Databases</div>
             </div>
-            <ul className="mx-auto mt-8 grid grid-cols-3 gap-9 text-center lg:mx-0 lg:max-w-none">
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="C#" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/csharp.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">C#</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="JavaScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/javascript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">JavaScript</span>
-                </div></li><li className="relative">
-                <div className="group inline-block">
-                  <img alt="Python" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/java.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">Jab</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="TypeScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/typescript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">TypeScript</span>
-                </div>
-              </li>
+            <ul className="mx-auto mt-8 flex flex-row justify-between gap-9 text-center ">
+              <Technologies name="SQL Server" src="https://svgl.app/library/microsoftsqlserver.svg" />
+              <Technologies name="MySQL" src="https://svgl.app/library/mysql.svg" />
+              <Technologies name="MongoDB" src="https://svgl.app/library/mongodb.svg" />
             </ul>
-          </li>
-          {/* Tools */}
-          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
-            <div className="flex max-w-6xl items-center justify-between border-b-2 border-red-500">
-              <div className="text-lg leading-8 font-semibold tracking-tight text-white">Tools</div>
-            </div>
-            <ul className="mx-auto mt-8 grid grid-cols-3 gap-9 text-center lg:mx-0 lg:max-w-none">
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="C#" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/csharp.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">C#</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="JavaScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/javascript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">JavaScript</span>
-                </div></li><li className="relative">
-                <div className="group inline-block">
-                  <img alt="Python" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/java.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">Jab</span>
-                </div>
-              </li>
-              <li className="relative">
-                <div className="group inline-block">
-                  <img alt="TypeScript" width="32" height="32" decoding="async" data-nimg="1" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src="https://svgl.app/library/typescript.svg" />
-                  <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">TypeScript</span>
-                </div>
-              </li>
-            </ul>
-          </li>
+          </li>                    
         </ul>
       </section>
       {/* Technology section end */}
 
       {/* Experiences section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">        
+      <section className="w-full max-w-6xl py-8 mx-auto">
         <SectionHeader title="experiences" subtitle="A curated chronicle of professional engagements" description="Full stack developer with experience in C#, ASP.NET, SQL Server, and Web API (MVC), contributing to VMS projects and optimizing critical functionalities. Developed and maintained flentis.com across backend, frontend, and SEO. Hands-on with ReactJS, React Hook Form, and Zod validation for building responsive, modern applications." imgSrc={`${process.env.PUBLIC_URL}/gifs/multitasking.gif`} />
         <div className="p-10">
           <div className="flex flex-col text-white bg-black/50 rounded-md">
@@ -243,7 +138,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="h-48 sm:h-60 w-full sm:w-80">
-                <img src={`${process.env.PUBLIC_URL}/images/flentis.webp`} alt="flentis" className="w-full h-full object-cover rounded-md" />
+                <img src={`${process.env.PUBLIC_URL}/images/flentis.webp`} alt="flentis" loading="lazy" className="w-full h-full object-cover rounded-md" />
               </div>
             </div>
           </div>
@@ -252,72 +147,27 @@ const Home = () => {
       {/* Experiences section end */}
 
       {/* Skills section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">        
+      <section className="w-full max-w-6xl py-8 mx-auto">
         <SectionHeader title="skills" subtitle="My key expertises and technical proficiencies" description="Skilled in full stack development with strong expertise in C#, ASP.NET, SQL, and modern front-end frameworks like ReactJS, Tailwind, and Bootstrap — delivering scalable, responsive, and cloud-ready solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/rating.gif`} />
         <div className="flex p-10 max-w-6xl gap-4 flex-wrap justify-center text-white">
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">JavaScript</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">ReactJS</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">SQL Server</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">MySQL</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">C#</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">ASP.NET</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">React Hook Form</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">DotNet Core MVC</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">DotNet Core Web API</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">Bootstrap</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">Tailwind CSS</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">JQuery</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">Entity Framework (EF)</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">LINQ</div>
-          <div className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">Azure</div>
+          {["JavaScript", "ReactJS", "SQL Server", "MySQL", "C#", "ASP.NET", "React Hook Form", "DotNet Core MVC", "DotNet Core Web API", "Bootstrap", "Tailwind CSS", "JQuery", "Entity Framework (EF)", "LINQ", "Azure",].map((skill) => (
+            <div key={skill} className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">
+              {skill}
+            </div>
+          ))}
         </div>
       </section>
       {/* Skills section end */}
 
       {/* Certificates & Badges  section start */}
-      <section className="w-full max-w-6xl py-8 mx-auto">        
+      <section className="w-full max-w-6xl py-8 mx-auto">
         <SectionHeader title="certificates & badges" subtitle="Recognized Skills and Professional Achievements" description="Certified by leading platforms like Coding Ninjas, CodeChef, and HackerRank — showcasing proven skills, problem-solving expertise, and a commitment to continuous learning." imgSrc={`${process.env.PUBLIC_URL}/gifs/certificate.gif`} />
         <div className="overflow-hidden relative sm:my-10 text-base text-gray-400">
           <div className="flex space-x-6 animate-scrollRight items-stretch hover:animate-none">
-            <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src={`${process.env.PUBLIC_URL}/images/csharp.webp`} alt="HackerRank" className="w-full h-auto object-cover" />
-              <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
-                <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">HackerRank</span></span>
-                <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">11 Oct 2025</span></span>
-                <span className="font-semibold text-[#e1b12c] mb-2 uppercase">more certificates : <span className="font-semibold text-gray-400 text-base normal-case">HackerRank</span></span>
-                <Link to="#" className="btn btn-primary">Go somewhere</Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src={`${process.env.PUBLIC_URL}/images/udemy_netcore.webp`} alt="Udemy" className="w-full h-auto object-cover" />
-              <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
-                <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">Udemy</span></span>
-                <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">19 March 2023</span></span>
-                <span className="font-semibold text-[#e1b12c] mb-2 uppercase">more certificates : <span className="font-semibold text-gray-400 text-base normal-case">HackerRank</span></span>
-                <Link to="#" className="btn btn-primary">Go somewhere</Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src={`${process.env.PUBLIC_URL}/images/codingninja_java.webp`} alt="codingninjas" className="w-full h-auto object-cover" />
-              <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
-                <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">CodingNinjas</span></span>
-                <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">15 Feb 2023</span></span>
-                <span className="font-semibold text-[#e1b12c] mb-2 uppercase">more certificates : <span className="font-semibold text-gray-400 text-base normal-case">HackerRank</span></span>
-                <Link to="#" className="btn btn-primary">Go somewhere</Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
-              <img src={`${process.env.PUBLIC_URL}/images/codechef_javascript.webp`} alt="codechef" className="w-full h-auto object-cover" />
-              <div className="w-full h-auto md:py-4 px-2 flex flex-col items-start gap-2">
-                <span className="font-semibold text-[#e1b12c] uppercase">issued by : <span className="font-semibold text-gray-400 text-base normal-case">CodeChef</span></span>
-                <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">20 May 2025</span></span>
-                <span className="font-semibold text-[#e1b12c] mb-2 uppercase">more certificates : <span className="font-semibold text-gray-400 text-base normal-case">HackerRank</span></span>
-                <Link to="#" className="btn btn-primary">Go somewhere</Link>
-              </div>
-            </div>
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/csharp.webp`} altText="HackerRank" issuedBy="HackerRank" earnedOn="11 Oct 2025" moreCertificates="HackerRank" link="#" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/udemy_netcore.webp`} altText="Udemy" issuedBy="Udemy" earnedOn="19 March 2023" moreCertificates="Udemy" link="#" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codingninja_java.webp`} altText="codingninjas" issuedBy="codingninjas" earnedOn="15 Feb 2023" moreCertificates="codingninjas" link="#" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codechef_javascript.webp`} altText="codechef" issuedBy="CodeChef" earnedOn="20 May 2025" moreCertificates="CodeChef" link="#" />
           </div>
         </div>
       </section>

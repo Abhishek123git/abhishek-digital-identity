@@ -5,7 +5,7 @@ export function SectionHeader({ title, subtitle, description, imgSrc }) {
       <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
       <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
       <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans text-center">{description}</p>
-      <img className="w-[50px] h-[50px] rounded-full" src={imgSrc} alt="gif" />
+      <img className="w-[50px] h-[50px] rounded-full" src={imgSrc} alt="gif" loading="lazy" />
     </div>
   );
 }

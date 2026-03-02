@@ -7,7 +7,7 @@ const About = () => {
       <section className="grid grid-rows-3 gap-2 p-3 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
         <div className="grid gap-2 place-items-center rounded-lg p-2">
           <div className="flex flex-col justify-center items-center">
-            <img src={`${process.env.PUBLIC_URL}/images/profile.webp`} alt="Profile" className="flex-auto w-[20%] h-auto rounded-lg hover:scale-105 transition-transform duration-300" />
+            <img src={`${process.env.PUBLIC_URL}/images/profile.webp`} alt="Profile" loading="lazy" className="flex-auto w-[20%] h-auto rounded-lg hover:scale-105 transition-transform duration-300" />
             <span className="text-white px-2 py-4 text-center text-2xl font-semibold" style={{ "fontFamily": "Courgette, Comic Sans MS" }}>Abhishek Kumar</span>
             <span className="block text-sm bg-[#b2bec3] rounded-lg px-4 py-2 text-gray-800 font-semibold  mt-1">Full Stack Developer</span>
           </div>
