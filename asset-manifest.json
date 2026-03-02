@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/abhishek-digital-identity/static/css/main.a469933b.css",
-    "main.js": "/abhishek-digital-identity/static/js/main.df909dd4.js",
+    "main.css": "/abhishek-digital-identity/static/css/main.520e1ccd.css",
+    "main.js": "/abhishek-digital-identity/static/js/main.263fbe22.js",
     "index.html": "/abhishek-digital-identity/index.html",
-    "main.a469933b.css.map": "/abhishek-digital-identity/static/css/main.a469933b.css.map",
-    "main.df909dd4.js.map": "/abhishek-digital-identity/static/js/main.df909dd4.js.map"
+    "main.520e1ccd.css.map": "/abhishek-digital-identity/static/css/main.520e1ccd.css.map",
+    "main.263fbe22.js.map": "/abhishek-digital-identity/static/js/main.263fbe22.js.map"
   },
   "entrypoints": [
-    "static/css/main.a469933b.css",
-    "static/js/main.df909dd4.js"
+    "static/css/main.520e1ccd.css",
+    "static/js/main.263fbe22.js"
   ]
 }
