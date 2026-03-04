@@ -1,7 +1,7 @@
 const NotFound = () => {
     return (
         <div className="flex flex-row items-center justify-center h-screen bg-[#262626] text-white">
-            <img src={`${process.env.PUBLIC_URL}/images/notfound.webp`} alt="404 Not Found" className="mr-8" />
+            <img src={`${process.env.PUBLIC_URL}/images/notfound.webp`} alt="404 Not Found" loading="lazy" className="mr-8" />
             <div className="flex flex-col items-center justify-center text-white">
                 <h1 className="text-4xl font-bold font-openSans animate-bounce">Oh No!</h1>
                 <p className="text-lg font-bold font-openSans">Sorry, the page you are looking for doesn't exist</p>
