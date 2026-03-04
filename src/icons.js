@@ -6,7 +6,7 @@ export { IoLocationOutline, IoQrCodeOutline } from "react-icons/io5"; //Location
 export { PiGithubLogoDuotone, PiMouseMiddleClickDuotone } from "react-icons/pi"; //Github Logo, Mouse Click
 export { TbBrandCSharp, TbBrandJavascript } from "react-icons/tb"; //C# JavaScript
 export { DiJqueryLogo, DiVisualstudio } from "react-icons/di"; //jQuery/AJAX Visual Studio
-export { BiLogoGmail, BiLogoJava } from "react-icons/bi"; //Gmail Java
+export { BiLogoGmail, BiLogoJava, BiSolidErrorAlt } from "react-icons/bi"; //Gmail Java
 export { LuLinkedin } from "react-icons/lu"; //LinkedIn
 export { FiInstagram } from "react-icons/fi"; //Instagram
 export { RiHomeSmileLine } from "react-icons/ri"; //Home

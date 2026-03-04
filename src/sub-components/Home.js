@@ -1,13 +1,5 @@
 import { Link } from "react-router-dom";
 
-const languages = [
-  { heading: "Languages", name: "C#", icon: "https://svgl.app/library/csharp.svg" },
-  { heading: "Frontends", name: "JavaScript", icon: "https://svgl.app/library/javascript.svg" },
-  { heading: "Backends", name: "Java", icon: "https://svgl.app/library/java.svg" },
-  { heading: "Databases", name: "TypeScript", icon: "https://svgl.app/library/typescript.svg" },
-  { heading: "Tools", name: "Python", icon: "https://svgl.app/library/python.svg" },
-];
-
 // Section header component for displaying title, subtitle, description, and an image
 export function SectionHeader({ title, subtitle, description, imgSrc }) {
     return (

@@ -1,9 +1,22 @@
-import QRCode from "react-qr-code";
+import { QRCode } from "react-qr-code";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { SectionHeader, SocialMediaSection } from "../sub-components/Contact";
-import { GrPhone, CgMail, FaDownload, BsFillSendArrowUpFill } from "../icons";
+import { GrPhone, CgMail, FaDownload, BsFillSendArrowUpFill, BiSolidErrorAlt } from "../icons";
 
 const Contact = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const OnlyWordAllowed = (value) => {    
+    const regex = /^[A-Za-z]+(?:\s[A-Za-z]+)?$/;
+    return regex.test(value) || "Only letters with at most one space allowed";
+  };
+
+  const EmailValidator = (value) => {
+    const regex = /^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com)$/;
+    return regex.test(value) || "Please enter a valid email address (gmail.com or outlook.com only)";
+  }
+
   return (
     <>
       <section className="flex items-center justify-center flex-col px-2 md:px-10 py-16 min-h-[55vh] mb-6 text-center text-white page-header">
@@ -39,12 +52,21 @@ const Contact = () => {
         <div className="w-full h-auto py-4 px-4 my-4 border border-gray-600 rounded-3xl">
           <div className="flex flex-col flex-auto">
             <p className="text-2xl font-bold">Contact Form</p>
-            <form className="flex flex-col gap-4 mt-4">
+            <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit((data) => alert(JSON.stringify(data)))}>
               <div className="flex flex-row gap-3" >
-                <input type="text" placeholder="Your Name" className="w-full p-3 rounded-lg bg-transparent text-white border border-gray-600" />
-                <input type="email" placeholder="Your Email" className="w-full p-3 rounded-lg bg-transparent text-white border border-gray-600" />
-              </div>
-              <textarea placeholder="Your Message" className="p-3 rounded-lg bg-transparent text-white border border-gray-600 h-32 resize-none"></textarea>
+                <div className="flex flex-col w-full">
+                  <input type="text" placeholder="Your Name" autoComplete="off" className="p-3 rounded-lg bg-transparent text-white border border-gray-600" {...register("name", { required: true, maxLength: { value: 30, message: "Name must be less than 30 characters" }, validate: OnlyWordAllowed })} />
+                  {errors.name && <span className="text-sm text-[#ff3838] font-semibold my-1">{errors.name.message}</span>}
+                  {errors.name && <span className="flex items-center inline-flex text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="mr-1" />Name is required</span>}
+                </div>         
+                <div className="flex flex-col w-full">
+                  <input type="email" placeholder="Your Email" autoComplete="off" className="w-full p-3 rounded-lg bg-transparent text-white border border-gray-600" {...register("email", { required: true, maxLength: { value: 50, message: "Email must be less than 50 characters" }, validate: EmailValidator })} />
+                  {errors.email && <span className="text-sm text-[#ff3838] font-semibold my-1">{errors.email.message}</span>}
+                  {errors.email && <span className="flex items-center inline-flex text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Email is required</span>}
+                </div>                       
+              </div>              
+              <textarea placeholder="Your Message" className="p-3 rounded-lg bg-transparent text-white border border-gray-600 h-32 resize-none" {...register("message", { required: true, maxLength: 100})} />
+              {errors.message && <span className="flex items-center inline-flex text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Message is required</span>}
               <div className="flex items-center justify-center w-full">
                 <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-40 border border-gray-600 rounded-lg cursor-pointer bg-transparent hover:bg-gray-800 transition">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
