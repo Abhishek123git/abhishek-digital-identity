@@ -24,24 +24,9 @@ export function CertificateCard ({ imgSrc, altText, issuedBy, earnedOn, moreCert
         </span>
         <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">
           Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">{earnedOn}</span>
-        </span>
-        <span className="font-semibold text-[#e1b12c] mb-2 uppercase">
-          more certificates : <span className="font-semibold text-gray-400 text-base normal-case">{moreCertificates}</span>
-        </span>
-        <Link to={link} className="btn btn-primary"> Go somewhere </Link>
+        </span>        
+        <Link to={link} className="px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 hover:text-[#c23616] transition-colors duration-300" target="_blank" rel="noreferrer"> Check Details </Link>
       </div>
     </div>
   );
 }
-
-// Technologies component for displaying a technology with its name and icon
-export function Technologies({ name, src }) {
-  return (
-    <li className="relative">
-      <div className="group inline-block">
-        <img alt={name} width="32" height="32" decoding="async" className="mx-auto rounded-xs group-hover:hidden group-focus:hidden" src={src} loading="lazy" />
-        <span className="mx-auto mb-1 hidden w-fit rounded-md bg-transparent p-1 text-center text-sm font-medium break-words whitespace-pre-line text-emerald-300 opacity-100 backdrop-blur-sm group-hover:inline-block group-focus:inline-block">{name}</span>
-      </div>
-    </li>
-  );
-};

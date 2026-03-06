@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import QRCode from "react-qr-code";
+import { QRCode} from "react-qr-code";
+import { ReactLight, TailwindCSS, JavaScript, TypeScript, Java, HTML5, Bootstrap, MicrosoftNET, MicrosoftSQLServer, MySQLLight, MongoDBLight, VisualStudioCode, VisualStudio, Swagger, Postman } from "@ridemountainpig/svgl-react";
 import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";
 import { GiCheckMark, FaDownload, IoQrCodeOutline } from "../icons";
-import { SectionHeader, CertificateCard, Technologies } from "../sub-components/Home";
+import { SectionHeader, CertificateCard } from "../sub-components/Home";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,16 +67,16 @@ const Home = () => {
       {/* Technologies section start */}
       <section className="w-full max-w-6xl py-8 mx-auto">
         <SectionHeader title="technologies" subtitle="Here's what I typically work with" description="This section highlights my core technical expertise across programming languages, front‑end frameworks, back‑end platforms, tools, and databases—demonstrating versatility and proficiency in full stack development. This version keeps it sharp and professional, perfect for portfolios where recruiters want to quickly grasp your skill set." imgSrc={`${process.env.PUBLIC_URL}/gifs/settings.gif`} />
-        <ul className="mx-auto mt-6 box-border columns-1 gap-[1em] md:columns-2 lg:columns-3">
+        <ul className="mx-auto mt-6 grid gap-[1em] md:grid-cols-2 lg:grid-cols-3">
           {/* Languages */}
           <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Languages</div>
             </div>
-            <ul className="mx-auto mt-8 flex flex-row gap-9 justify-between text-center ">
-              <Technologies name="C#" src="https://svgl.app/library/csharp.svg" />
-              <Technologies name="JavaScript" src="https://svgl.app/library/javascript.svg" />
-              <Technologies name="TypeScript" src="https://svgl.app/library/typescript.svg" />
+            <ul className="mx-auto mt-8 flex flex-row flex-wrap gap-9 justify-between text-center ">
+              <Java width={60} height={60} />
+              <JavaScript width={60} height={60} />
+              <TypeScript width={60} height={60} />
             </ul>
           </li>
           {/* Backends */}
@@ -83,10 +84,8 @@ const Home = () => {
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Backend</div>
             </div>
-            <ul className="mx-auto mt-8 flex flex-row justify-between gap-9 text-center ">
-              <Technologies name="Java" src="https://svgl.app/library/java.svg" />
-              <Technologies name="C#" src="https://svgl.app/library/csharp.svg" />
-              <Technologies name="ASP.NET" src="https://svgl.app/library/dotnet.svg" />
+            <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
+              <MicrosoftNET width={60} height={60} />
             </ul>
           </li>
           {/* Frontends */}
@@ -94,11 +93,11 @@ const Home = () => {
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Frontends</div>
             </div>
-            <ul className="mx-auto mt-8 flex flex-row justify-between gap-9 text-center ">              
-              <Technologies name="HTML5" src="https://svgl.app/library/html5.svg" />
-              {/* <Technologies name="React" src="https://www.svgrepo.com/svg/374032/reactjs" /> */}
-              <Technologies name="Tailwind CSS" src="https://svgl.app/library/tailwindcss.svg" />
-              <Technologies name="Bootstrap" src="https://svgl.app/library/bootstrap.svg" />
+            <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">              
+              <HTML5 width={60} height={60} />                            
+              <Bootstrap width={60} height={60} />
+              <ReactLight width={60} height={60} />
+              <TailwindCSS width={60} height={60} />
             </ul>
           </li>
           {/* Databases */}
@@ -106,12 +105,24 @@ const Home = () => {
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Databases</div>
             </div>
-            <ul className="mx-auto mt-8 flex flex-row justify-between gap-9 text-center ">
-              <Technologies name="SQL Server" src="https://svgl.app/library/microsoftsqlserver.svg" />
-              <Technologies name="MySQL" src="https://svgl.app/library/mysql.svg" />
-              <Technologies name="MongoDB" src="https://svgl.app/library/mongodb.svg" />
+            <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
+              <MicrosoftSQLServer width={60} height={60} />
+              <MySQLLight width={60} height={60} />
+              <MongoDBLight width={60} height={60} />
             </ul>
-          </li>                    
+          </li> 
+          {/* Tools */}
+          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
+            <div className="flex border-b-2 border-red-500">
+              <div className="text-lg font-semibold text-white">Tools</div>
+            </div>
+            <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
+              <VisualStudioCode width={60} height={60} />
+              <VisualStudio width={60} height={60} />
+              <Swagger width={60} height={60} />
+              <Postman width={60} height={60} />
+            </ul>
+          </li>                   
         </ul>
       </section>
       {/* Technology section end */}
@@ -151,7 +162,8 @@ const Home = () => {
         <SectionHeader title="skills" subtitle="My key expertises and technical proficiencies" description="Skilled in full stack development with strong expertise in C#, ASP.NET, SQL, and modern front-end frameworks like ReactJS, Tailwind, and Bootstrap — delivering scalable, responsive, and cloud-ready solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/rating.gif`} />
         <div className="flex p-10 max-w-6xl gap-4 flex-wrap justify-center text-white">
           {["JavaScript", "ReactJS", "SQL Server", "MySQL", "C#", "ASP.NET", "React Hook Form", "DotNet Core MVC", "DotNet Core Web API", "Bootstrap", "Tailwind CSS", "JQuery", "Entity Framework (EF)", "LINQ", "Azure",].map((skill) => (
-            <div key={skill} className="w-auto h-auto px-4 py-2 border border-gray-300 rounded-full">
+            <div key={skill} className="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
+               text-white font-semibold shadow-lg animate-pulse">
               {skill}
             </div>
           ))}
@@ -164,10 +176,10 @@ const Home = () => {
         <SectionHeader title="certificates & badges" subtitle="Recognized Skills and Professional Achievements" description="Certified by leading platforms like Coding Ninjas, CodeChef, and HackerRank — showcasing proven skills, problem-solving expertise, and a commitment to continuous learning." imgSrc={`${process.env.PUBLIC_URL}/gifs/certificate.gif`} />
         <div className="overflow-hidden relative sm:my-10 text-base text-gray-400">
           <div className="flex space-x-6 animate-scrollRight items-stretch hover:animate-none">
-            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/csharp.webp`} altText="HackerRank" issuedBy="HackerRank" earnedOn="11 Oct 2025" moreCertificates="HackerRank" link="#" />
-            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/udemy_netcore.webp`} altText="Udemy" issuedBy="Udemy" earnedOn="19 March 2023" moreCertificates="Udemy" link="#" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/csharp.webp`} altText="HackerRank" issuedBy="HackerRank" earnedOn="11 Oct 2025" moreCertificates="HackerRank" link="https://www.hackerrank.com/certificates/132cb9f96e1c" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/udemy_netcore.webp`} altText="Udemy" issuedBy="Udemy" earnedOn="19 March 2023" moreCertificates="Udemy" link="https://www.udemy.com/certificate/UC-91bef800-126f-4506-a0bb-d1f0f027627d/" />
             <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codingninja_java.webp`} altText="codingninjas" issuedBy="codingninjas" earnedOn="15 Feb 2023" moreCertificates="codingninjas" link="#" />
-            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codechef_javascript.webp`} altText="codechef" issuedBy="CodeChef" earnedOn="20 May 2025" moreCertificates="CodeChef" link="#" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codechef_javascript.webp`} altText="codechef" issuedBy="CodeChef" earnedOn="20 May 2025" moreCertificates="CodeChef" link="https://www.codechef.com/certificates/public/4c489d0" />
           </div>
         </div>
       </section>
