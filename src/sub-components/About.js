@@ -19,9 +19,9 @@ export function JourneyComponent({ year, headerText, descriptionText }) {
 
     return (
         <div className="flex justify-start md:gap-10 my-8">
-            <h3 className="flex items-center text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 group"><SlCalender className="w-8 h-auto mr-2 group-hover:animate-calenderColor" />{year}</h3>
+            <p className="flex items-center text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 group"><SlCalender className="w-8 h-auto mr-2 group-hover:animate-calenderColor" />{year}</p>
             <div className="pl-20 pr-4 md:pl-4 w-full border-b-2 border-neutral-500">
-                <h3 className="text-white text-lg md:text-xl font-bold font-inter mb-2">{headerText}</h3>
+                <p className="text-white text-lg md:text-xl font-bold font-inter mb-2">{headerText}</p>
                 <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans mb-8 text-justify">{descriptionText}</p>
             </div>
         </div>

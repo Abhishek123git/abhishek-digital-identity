@@ -13,7 +13,7 @@ function App() {
   return (
     <ErrorBoundary FallbackComponent={() => <div className="flex items-center justify-center h-screen text-2xl text-red-500">Something went wrong. Please try again later.</div>}>
       <div className="flex flex-col min-h-screen">
-        <Router>
+        <Router basename="/abhishek-digital-identity">
           <Navbar />
           <main className="flex-grow flex flex-col bg-[#262626]">
             <Routes>

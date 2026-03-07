@@ -74,9 +74,9 @@ const Home = () => {
               <div className="text-lg font-semibold text-white">Languages</div>
             </div>
             <ul className="mx-auto mt-8 flex flex-row flex-wrap gap-9 justify-between text-center ">
-              <Java width={60} height={60} />
-              <JavaScript width={60} height={60} />
-              <TypeScript width={60} height={60} />
+              <li><Java width={60} height={60} /></li>
+              <li><JavaScript width={60} height={60} /></li>
+              <li><TypeScript width={60} height={60} /></li>
             </ul>
           </li>
           {/* Backends */}
@@ -85,7 +85,7 @@ const Home = () => {
               <div className="text-lg font-semibold text-white">Backend</div>
             </div>
             <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
-              <MicrosoftNET width={60} height={60} />
+              <li><MicrosoftNET width={60} height={60} /></li>
             </ul>
           </li>
           {/* Frontends */}
@@ -94,10 +94,10 @@ const Home = () => {
               <div className="text-lg font-semibold text-white">Frontends</div>
             </div>
             <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">              
-              <HTML5 width={60} height={60} />                            
-              <Bootstrap width={60} height={60} />
-              <ReactLight width={60} height={60} />
-              <TailwindCSS width={60} height={60} />
+              <li><HTML5 width={60} height={60} /></li>                            
+              <li><Bootstrap width={60} height={60} /></li>
+              <li><ReactLight width={60} height={60} /></li>
+              <li><TailwindCSS width={60} height={60} /></li>
             </ul>
           </li>
           {/* Databases */}
@@ -106,9 +106,9 @@ const Home = () => {
               <div className="text-lg font-semibold text-white">Databases</div>
             </div>
             <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
-              <MicrosoftSQLServer width={60} height={60} />
-              <MySQLLight width={60} height={60} />
-              <MongoDBLight width={60} height={60} />
+              <li><MicrosoftSQLServer width={60} height={60} /></li>
+              <li><MySQLLight width={60} height={60} /></li>
+              <li><MongoDBLight width={60} height={60} /></li>
             </ul>
           </li> 
           {/* Tools */}
@@ -117,10 +117,10 @@ const Home = () => {
               <div className="text-lg font-semibold text-white">Tools</div>
             </div>
             <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
-              <VisualStudioCode width={60} height={60} />
-              <VisualStudio width={60} height={60} />
-              <Swagger width={60} height={60} />
-              <Postman width={60} height={60} />
+              <li><VisualStudioCode width={60} height={60} /></li>
+              <li><VisualStudio width={60} height={60} /></li>
+              <li><Swagger width={60} height={60} /></li>
+              <li><Postman width={60} height={60} /></li>
             </ul>
           </li>                   
         </ul>
