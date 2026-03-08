@@ -19,12 +19,12 @@ const Contact = () => {
 
   return (
     <>
-      <section className="flex items-center justify-center flex-col px-2 md:px-10 py-16 min-h-[55vh] mb-6 text-center text-white page-header">
+      <section className="flex items-center justify-center flex-col px-2 md:px-10 py-16 min-h-[55vh] mb-6 text-center text-white">
         <h2 className="text-2xl md:text-6xl font-serif font-bold text-center">Get to Know Me Better</h2>
         <p className="text-sm font-openSans md:text-2xl py-px mt-6 text-center">Explore my interests, my journey as a programmer, why I chose this field, everything 101.</p>
       </section>
       <section className="flex justify-center flex-col px-2 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">
-        <SectionHeader title="let's contact" subtitle="Let's connect and create something amazing together" description="Let’s connect, collaborate, and create something extraordinary together" imgSrc={`${process.env.PUBLIC_URL}/gifs/telephone.gif`} />
+        <SectionHeader title="let's contact" subtitle="Let's connect and create something amazing together" description="Let’s connect, collaborate, and create something extraordinary together" imgSrc={`${process.env.PUBLIC_URL}/gifs/telephone.webm`} />
         <div className="w-full h-auto py-4 px-4 my-4 border border-gray-600 rounded-3xl">
           <div className="flex flex-row gap-3">
             <div className="flex flex-col flex-auto">
@@ -74,13 +74,13 @@ const Contact = () => {
                     <p className="mb-2 text-sm text-gray-400">
                       <span className="font-semibold">Click to upload</span> or drag and drop <span className="font-semibold text-[#0abde3]">(Optional)</span>
                     </p>
-                    <p className="text-sm text-gray-500">PDF only (max 10MB)</p>
+                    <p className="text-sm text-gray-400">PDF only (max 10MB)</p>
                   </div>
                   <input id="dropzone-file" type="file" accept=".pdf" className="hidden" />
                 </label>
               </div>
               <div className="flex flex-row gap-3 my-3">
-                <p className="w-full text-sm font-semibold text-gray-500">This site is protected by reCAPTCHA and the <Link to="https://policies.google.com/privacy" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Google Privacy Policy</Link> and <Link to="https://policies.google.com/terms" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Terms of Service</Link> apply.</p>
+                <p className="w-full text-sm font-semibold text-gray-400">This site is protected by reCAPTCHA and the <Link to="https://policies.google.com/privacy" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Google Privacy Policy</Link> and <Link to="https://policies.google.com/terms" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Terms of Service</Link> apply.</p>
                 <button type="submit" className="flex border border-gray-600 text-white whitespace-nowrap py-2 px-4 rounded-lg font-semibold hover:bg-purple-500 transition-colors duration-300"><BsFillSendArrowUpFill className="w-5 h-auto mr-2 text-[#44bd32]" /> Send Message</button>
               </div>
             </form>
@@ -90,7 +90,7 @@ const Contact = () => {
       </section>
       <section className="flex items-center justify-center flex-col px-2 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">
         <div className=" w-full text-center flex justify-center items-center flex-col gap-2 my-8">
-          <SectionHeader title="contact me" subtitle="Let's connect and create something amazing together." description="Connect with me easily through LinkedIn, Gmail, or GitHub—let’s collaborate and create something amazing together." imgSrc={`${process.env.PUBLIC_URL}/gifs/telephone.gif`} />
+          <SectionHeader title="contact me" subtitle="Let's connect and create something amazing together." description="Connect with me easily through LinkedIn, Gmail, or GitHub—let’s collaborate and create something amazing together." imgSrc={`${process.env.PUBLIC_URL}/gifs/socialmedia.webm`} />
         </div>
         <SocialMediaSection />
       </section>

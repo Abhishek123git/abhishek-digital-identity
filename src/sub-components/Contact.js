@@ -35,7 +35,7 @@ export function SectionHeader({ title, subtitle, description, imgSrc }) {
       <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
       <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
       <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans text-center">{description}</p>
-      <img className="w-[50px] h-[50px] rounded-full" src={imgSrc} alt="gif" loading="lazy" />
+      <video className="rounded-full" src={imgSrc} playsInline autoPlay loop muted />
     </div>
   );
 }
@@ -44,20 +44,20 @@ export function SocialMediaSection() {
     return (
         <div className="flex justify-center items-center px-2 py-4 text-base gap-2">
             {myObject.map((item, index) => (
-                <div key={index} className="flex-1 flex flex-col items-center p-3 rounded-xl border border-gray-600 bg-black">
+                <div key={index} className="flex-1 flex flex-col items-center p-3 rounded-xl border border-gray-400 bg-black">
                     <div className="w-full rounded-xl bg-transparent mx-auto my-2">
                         <div className="flex basis-full flex-col p-4 w-full h-auto ">
                             <h3 className="w-full !pb-2 !m-0 font-bold flex flex-row justify-between">{item.title}
                                 {item.icon1}
                             </h3>
                             <div className="flex flex-row gap-2">
-                                <span className="text-slate-500 py-2">{item.subtitle}</span>
-                                <Link className="flex clickLink justify-center items-center border-2 border-dashed rounded-[50%] p-2" to={item.link} target="_blank" rel="noreferrer">
+                                <span className="text-slate-400 py-2">{item.subtitle}</span>
+                                <Link className="flex clickLink justify-center items-center border-2 border-dashed rounded-[50%] p-2" aria-label={`Visit my ${item.title} profile`} to={item.link} target="_blank" rel="noreferrer">
                                     {item.icon2}
                                 </Link>
                             </div>
                             <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
-                                <img className="w-full h-auto rounded-lg " alt={item.title} src={item.src} loading="lazy" />
+                                <img width={600} height={400} className="w-full h-auto rounded-lg " alt={item.title} src={item.src} loading="lazy" />
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ export { GrPhone, GrReactjs, GrDocumentWord } from "react-icons/gr"; //Phone Rea
 export { FaFilePdf, FaDownload, FaBootstrap, FaGithub } from "react-icons/fa6"; //PDF, Download, Bootstrap, GitHub
 export { SiLeetcode, SiHackerrank, SiCodechef, SiReaddotcv, SiJira } from "react-icons/si"; //LeetCode, HackerRank, CodeChef, Read.cv, Jira
 export { IoLocationOutline, IoQrCodeOutline } from "react-icons/io5"; //Location QR Code
-export { PiGithubLogoDuotone, PiMouseMiddleClickDuotone } from "react-icons/pi"; //Github Logo, Mouse Click
+export { PiGithubLogoDuotone, PiMouseMiddleClickDuotone, PiStepsDuotone } from "react-icons/pi"; //Github Logo, Mouse Click
 export { TbBrandCSharp, TbBrandJavascript } from "react-icons/tb"; //C# JavaScript
 export { DiJqueryLogo, DiVisualstudio } from "react-icons/di"; //jQuery/AJAX Visual Studio
 export { BiLogoGmail, BiLogoJava, BiSolidErrorAlt } from "react-icons/bi"; //Gmail Java

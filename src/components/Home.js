@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <section className="w-full max-w-6xl py-8 sm:py-16 mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-          <span className="text-white flex items-center">Hi, I am <img className="w-[50px] h-[50px] inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.gif`} alt="gif" loading="lazy" /></span>
+          <span className="text-white flex items-center">Hi, I am <video className="inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.webm`} playsInline autoPlay loop muted></video></span>
           <span className="mt-4 block text-emerald-500">Abhishek Kumar</span>
         </h1>
         <div className="grid grid-cols-2 gap-4 mt-6 w-full text-base text-white/75 text-justify items-stretch">
@@ -66,7 +66,7 @@ const Home = () => {
 
       {/* Technologies section start */}
       <section className="w-full max-w-6xl py-8 mx-auto">
-        <SectionHeader title="technologies" subtitle="Here's what I typically work with" description="This section highlights my core technical expertise across programming languages, front‑end frameworks, back‑end platforms, tools, and databases—demonstrating versatility and proficiency in full stack development. This version keeps it sharp and professional, perfect for portfolios where recruiters want to quickly grasp your skill set." imgSrc={`${process.env.PUBLIC_URL}/gifs/settings.gif`} />
+        <SectionHeader title="technologies" subtitle="Here's what I typically work with" description="This section highlights my core technical expertise across programming languages, front‑end frameworks, back‑end platforms, tools, and databases—demonstrating versatility and proficiency in full stack development. This version keeps it sharp and professional, perfect for portfolios where recruiters want to quickly grasp your skill set." imgSrc={`${process.env.PUBLIC_URL}/gifs/settings.webm`} />
         <ul className="mx-auto mt-6 grid gap-[1em] md:grid-cols-2 lg:grid-cols-3">
           {/* Languages */}
           <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
@@ -129,7 +129,7 @@ const Home = () => {
 
       {/* Experiences section start */}
       <section className="w-full max-w-6xl py-8 mx-auto">
-        <SectionHeader title="experiences" subtitle="A curated chronicle of professional engagements" description="Full stack developer with experience in C#, ASP.NET, SQL Server, and Web API (MVC), contributing to VMS projects and optimizing critical functionalities. Developed and maintained flentis.com across backend, frontend, and SEO. Hands-on with ReactJS, React Hook Form, and Zod validation for building responsive, modern applications." imgSrc={`${process.env.PUBLIC_URL}/gifs/multitasking.gif`} />
+        <SectionHeader title="experiences" subtitle="A curated chronicle of professional engagements" description="Full stack developer with experience in C#, ASP.NET, SQL Server, and Web API (MVC), contributing to VMS projects and optimizing critical functionalities. Developed and maintained flentis.com across backend, frontend, and SEO. Hands-on with ReactJS, React Hook Form, and Zod validation for building responsive, modern applications." imgSrc={`${process.env.PUBLIC_URL}/gifs/multitasking.webm`} />
         <div className="p-10">
           <div className="flex flex-col text-white bg-black/50 rounded-md">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif my-5 lg:px-14">Associate Software Engineer</h1>
@@ -159,7 +159,7 @@ const Home = () => {
 
       {/* Skills section start */}
       <section className="w-full max-w-6xl py-8 mx-auto">
-        <SectionHeader title="skills" subtitle="My key expertises and technical proficiencies" description="Skilled in full stack development with strong expertise in C#, ASP.NET, SQL, and modern front-end frameworks like ReactJS, Tailwind, and Bootstrap — delivering scalable, responsive, and cloud-ready solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/rating.gif`} />
+        <SectionHeader title="skills" subtitle="My key expertises and technical proficiencies" description="Skilled in full stack development with strong expertise in C#, ASP.NET, SQL, and modern front-end frameworks like ReactJS, Tailwind, and Bootstrap — delivering scalable, responsive, and cloud-ready solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/rating.webm`} />
         <div className="flex p-10 max-w-6xl gap-4 flex-wrap justify-center text-white">
           {["JavaScript", "ReactJS", "SQL Server", "MySQL", "C#", "ASP.NET", "React Hook Form", "DotNet Core MVC", "DotNet Core Web API", "Bootstrap", "Tailwind CSS", "JQuery", "Entity Framework (EF)", "LINQ", "Azure",].map((skill) => (
             <div key={skill} className="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
@@ -173,13 +173,13 @@ const Home = () => {
 
       {/* Certificates & Badges  section start */}
       <section className="w-full max-w-6xl py-8 mx-auto">
-        <SectionHeader title="certificates & badges" subtitle="Recognized Skills and Professional Achievements" description="Certified by leading platforms like Coding Ninjas, CodeChef, and HackerRank — showcasing proven skills, problem-solving expertise, and a commitment to continuous learning." imgSrc={`${process.env.PUBLIC_URL}/gifs/certificate.gif`} />
+        <SectionHeader title="certificates & badges" subtitle="Recognized Skills and Professional Achievements" description="Certified by leading platforms like Coding Ninjas, CodeChef, and HackerRank — showcasing proven skills, problem-solving expertise, and a commitment to continuous learning." imgSrc={`${process.env.PUBLIC_URL}/gifs/certificate.webm`} />
         <div className="overflow-hidden relative sm:my-10 text-base text-gray-400">
           <div className="flex space-x-6 animate-scrollRight items-stretch hover:animate-none">
-            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/csharp.webp`} altText="HackerRank" issuedBy="HackerRank" earnedOn="11 Oct 2025" moreCertificates="HackerRank" link="https://www.hackerrank.com/certificates/132cb9f96e1c" />
-            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/udemy_netcore.webp`} altText="Udemy" issuedBy="Udemy" earnedOn="19 March 2023" moreCertificates="Udemy" link="https://www.udemy.com/certificate/UC-91bef800-126f-4506-a0bb-d1f0f027627d/" />
-            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codingninja_java.webp`} altText="codingninjas" issuedBy="codingninjas" earnedOn="15 Feb 2023" moreCertificates="codingninjas" link="#" />
-            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codechef_javascript.webp`} altText="codechef" issuedBy="CodeChef" earnedOn="20 May 2025" moreCertificates="CodeChef" link="https://www.codechef.com/certificates/public/4c489d0" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/csharp.webp`} altText="HackerRank" issuedBy="HackerRank" earnedOn="11 Oct 2025" link="https://www.hackerrank.com/certificates/132cb9f96e1c" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/udemy_netcore.webp`} altText="Udemy" issuedBy="Udemy" earnedOn="19 March 2023" link="https://www.udemy.com/certificate/UC-91bef800-126f-4506-a0bb-d1f0f027627d/" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codingninja_java.webp`} altText="codingninjas" issuedBy="codingninjas" earnedOn="15 Feb 2023" link="#" />
+            <CertificateCard imgSrc={`${process.env.PUBLIC_URL}/images/codechef_javascript.webp`} altText="codechef" issuedBy="CodeChef" earnedOn="20 May 2025" link="https://www.codechef.com/certificates/public/4c489d0" />
           </div>
         </div>
       </section>

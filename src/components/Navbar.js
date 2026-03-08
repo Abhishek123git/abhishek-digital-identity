@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="flex gap-4 h-full flex-row items-center">        
           <div className="flex basis-0 flex-row flex-grow flex-nowrap justify-start bg-transparent items-center no-underline text-medium whitespace-nowrap box-border" justify="start">
             <Link aria-current="page" to="/">
-              <p className="font-semibold text-2xl justEffect font-serif bg-gradient-to-b from-purple-400 via-purple-500 to-black bg-clip-text text-transparent border-0" style={{ "backgroundSize": "100% 100%", "backgroundPosition": "center top" }}>&lt; Abhishek Kumar /&gt;</p>
+              <h1 className="font-semibold text-2xl font-serif text-purple-500" >&lt; Abhishek Kumar /&gt;</h1>
             </Link>
           </div>
         </div>

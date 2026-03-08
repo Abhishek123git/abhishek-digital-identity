@@ -7,14 +7,14 @@ export function SectionHeader({ title, subtitle, description, imgSrc }) {
             <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
             <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
             <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans text-center">{description}</p>
-            <img className="w-[50px] h-[50px] rounded-full" src={imgSrc} alt="gif" loading="lazy" />
+            <video className="rounded-full" src={imgSrc} autoPlay loop muted playsInline></video>
         </div>
     );
 }
 
 // CertificateCard component for displaying certificate information with an image, issued by, earned on, more certificates, and a link
 
-export function CertificateCard ({ imgSrc, altText, issuedBy, earnedOn, moreCertificates, link }) {
+export function CertificateCard ({ imgSrc, altText, issuedBy, earnedOn, link }) {
   return (
     <div className="flex flex-col items-center rounded-lg flex-1 md:p-2 border border-gray-600">
       <img src={imgSrc} alt={altText} width={600} height={400} className="w-full h-auto object-cover" loading="lazy" />

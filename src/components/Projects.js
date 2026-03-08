@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { SectionHeader, UIProjectSection, APIProjectSection, MVCProjectSection } from "../sub-components/Projects";
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("UI/UX");
@@ -10,7 +11,7 @@ const Projects = () => {
         <p className="text-sm font-openSans md:text-2xl mt-6 text-center">Witness the evolution of ideas into impactful creations—one line of code at a time.</p>
       </section>
       <section className="flex justify-center items-center flex-col px-2 mt-[100px] mb-10 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">
-        <SectionHeader title="My Projects" subtitle="Crafting each project like an artisan shaping their masterpiece" description="A showcase of my recent projects and contributions to the tech world." imgSrc={`${process.env.PUBLIC_URL}/gifs/project.gif`} />
+        <SectionHeader title="My Projects" subtitle="Crafting each project like an artisan shaping their masterpiece" description="A showcase of my recent projects and contributions to the tech world." imgSrc={`${process.env.PUBLIC_URL}/gifs/project.webm`} />
         <div className="flex justify-center flex-wrap gap-4 max-w-6xl h-auto py-4 px-4 my-4">
           <div className="flex flex-row items-center justify-center gap-2 w-full text-white">
             <button className={`px-4 py-2 border border-gray-600 rounded-full ${activeCategory === "UI/UX" ? "bg-gray-700" : ""}`} onClick={() => setActiveCategory("UI/UX")}>
@@ -35,10 +36,12 @@ const Projects = () => {
         </div>
       </section>
 
-      <section className="flex flex-col text-center w-full justify-center items-center gap-6 md:gap-10 px-4">
-        <div className="max-w-lg text-center flex justify-center items-center flex-col gap-2">
-          <p className="text-2xl md:text-4xl font-ysabeau text-purple-500">STEP INTO MY CODE VAULT</p>
-          <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium ">Don't forget to meet my enchanters! (click for context)</p>
+      <section className="flex flex-col text-center w-full justify-center items-center gap-6 md:gap-10 px-4 mb-10">        
+        <SectionHeader title="STEP INTO MY CODE VAULT" subtitle="Don't forget to meet my enchanters! (click for context)" description="A vault of code, creativity, and contributions and Unlock projects that power my digital journey" imgSrc={`${process.env.PUBLIC_URL}/gifs/project.webm`} />
+        <div className="flex justify-center flex-wrap gap-4 max-w-6xl h-auto py-4 px-4">
+          <Link to="https://github.com/Abhishek123git" className="px-4 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300" target="_blank" rel="noopener noreferrer">
+            github.com/Abhishek123git
+          </Link>
         </div>
       </section>    
     </>
