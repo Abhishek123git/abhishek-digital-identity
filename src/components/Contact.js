@@ -1,9 +1,8 @@
-import { QRCode } from "react-qr-code";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { SectionHeader, SocialMediaSection } from "../sub-components/Contact";
-import { GrPhone, CgMail, FaDownload, BsFillSendArrowUpFill, BiSolidErrorAlt } from "../icons";
+import { GrPhone, CgMail, FaDownload, BsFillSendArrowUpFill, BiSolidErrorAlt, MdOutlineContactMail, GiArchiveRegister } from "../icons";
 import { SuccessModal } from "../sub-components/Model";
 
 const Contact = () => {
@@ -20,7 +19,7 @@ const Contact = () => {
   return (
     <>
       <section className="flex items-center justify-center flex-col px-2 md:px-10 py-16 min-h-[55vh] mb-6 text-center text-white">
-        <h2 className="text-2xl md:text-6xl font-serif font-bold text-center">Get to Know Me Better</h2>
+        <p className="text-2xl md:text-6xl font-serif font-bold text-center">Get to Know Me Better</p>
         <p className="text-sm font-openSans md:text-2xl py-px mt-6 text-center">Explore my interests, my journey as a programmer, why I chose this field, everything 101.</p>
       </section>
       <section className="flex justify-center flex-col px-2 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">
@@ -28,30 +27,30 @@ const Contact = () => {
         <div className="w-full h-auto py-4 px-4 my-4 border border-gray-600 rounded-3xl">
           <div className="flex flex-row gap-3">
             <div className="flex flex-col flex-auto">
-              <p className="text-2xl font-bold">Contact Details</p>
+              <p className="flex items-center text-2xl font-bold">Contact Details<MdOutlineContactMail className="ml-2 hover:text-purple-500" /></p>
               <div className="flex items-center gap-4 mt-4">
                 <span className="px-py text-purple-500"><GrPhone className="w-6 h-auto mr-2 animate-pulse" /></span>
                 <p className="flex flex-col font-semibold">Mobile
-                  <span className="font-normal">+91 9876543210</span>
+                  <span className="font-normal">+91 7303777431</span>
                 </p>
               </div>
               <div className="flex items-center gap-4 mt-4">
                 <span className="px-py text-purple-500"><CgMail className="w-6 h-auto mr-2 animate-pulse" /></span>
                 <p className="flex flex-col font-semibold">Email
-                  <span className="font-normal">abhishek@example.com</span>
+                  <span className="font-normal">abhishek.kumardev@outlook.com</span>
                 </p>
               </div>
             </div>
             <div className="flex justify-end flex-auto">
               <div className="p-3 bg-[#dfe6e9] rounded-xl hover:scale-105 transition-transform duration-300">
-                <QRCode size={140} fgColor="#dfe6e9" bgColor="black" level="H" value="/public/Abhishek.vcf" />
+                <img src={`${process.env.PUBLIC_URL}/images/contact-qr-code.webp`} alt="QR" loading="lazy" />
               </div>
             </div>
           </div>
         </div>
         <div className="w-full h-auto py-4 px-4 my-4 border border-gray-600 rounded-3xl">
           <div className="flex flex-col flex-auto">
-            <p className="text-2xl font-bold">Contact Form</p>
+            <p className="flex items-center text-2xl font-bold">Contact Form<GiArchiveRegister className="ml-2 hover:text-purple-500" /></p>
             <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-row gap-3" >
                 <div className="flex flex-col w-full">
@@ -70,7 +69,7 @@ const Contact = () => {
               <div className="flex items-center justify-center w-full">
                 <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-40 border border-gray-600 rounded-lg cursor-pointer bg-transparent hover:bg-gray-800 transition">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                    <FaDownload className="w-8 h-auto mb-3 text-[#0abde3] animate-pulse" />
+                    <FaDownload className="w-8 h-auto mb-3 text-[#0abde3] animate-bounce" />
                     <p className="mb-2 text-sm text-gray-400">
                       <span className="font-semibold">Click to upload</span> or drag and drop <span className="font-semibold text-[#0abde3]">(Optional)</span>
                     </p>

@@ -12,7 +12,7 @@ const myObject = [
     },
     {
         title: "Gmail",
-        subtitle: "Connect you can email me directly",
+        subtitle: "Connect me through email",
         icon1: <BiLogoGmail className="w-6 h-auto" />,
         icon2: <PiMouseMiddleClickDuotone className="clickmouse w-6 h-auto animate-pulse" />,
         src: `${process.env.PUBLIC_URL}/images/outlook.webp`,
@@ -20,7 +20,7 @@ const myObject = [
     },
     {
         title: "Github",
-        subtitle: "Free to connect with me on GitHub",
+        subtitle: "Connect with me on GitHub",
         icon1: <FaGithub className="w-6 h-auto" />,
         icon2: <PiMouseMiddleClickDuotone className="clickmouse w-6 h-auto animate-pulse" />,
         src: `${process.env.PUBLIC_URL}/images/github.webp`,
@@ -47,10 +47,10 @@ export function SocialMediaSection() {
                 <div key={index} className="flex-1 flex flex-col items-center p-3 rounded-xl border border-gray-400 bg-black">
                     <div className="w-full rounded-xl bg-transparent mx-auto my-2">
                         <div className="flex basis-full flex-col p-4 w-full h-auto ">
-                            <h3 className="w-full !pb-2 !m-0 font-bold flex flex-row justify-between">{item.title}
+                            <p className="w-full !pb-2 !m-0 font-bold flex flex-row justify-between">{item.title}
                                 {item.icon1}
-                            </h3>
-                            <div className="flex flex-row gap-2">
+                            </p>
+                            <div className="flex flex-row my-3 justify-between">
                                 <span className="text-slate-400 py-2">{item.subtitle}</span>
                                 <Link className="flex clickLink justify-center items-center border-2 border-dashed rounded-[50%] p-2" aria-label={`Visit my ${item.title} profile`} to={item.link} target="_blank" rel="noreferrer">
                                     {item.icon2}

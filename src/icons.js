@@ -10,9 +10,9 @@ export { BiLogoGmail, BiLogoJava, BiSolidErrorAlt } from "react-icons/bi"; //Gma
 export { LuLinkedin } from "react-icons/lu"; //LinkedIn
 export { FiInstagram } from "react-icons/fi"; //Instagram
 export { RiHomeSmileLine } from "react-icons/ri"; //Home
-export { MdStarPurple500 } from "react-icons/md"; //Star
+export { MdStarPurple500, MdOutlineContactMail } from "react-icons/md"; //Star
 export { BsFillDatabaseFill, BsFillSendArrowUpFill } from "react-icons/bs"; //SQL Server Database, Send message
 export { VscVscode } from "react-icons/vsc"; //VS Code
 export { ImArrowRight } from "react-icons/im"; //Arrow Right
-export { GiCheckMark } from "react-icons/gi"; //Check Mark
+export { GiCheckMark, GiArchiveRegister  } from "react-icons/gi"; //Check Mark
 export { FaProjectDiagram } from "react-icons/fa"; //Project Diagram

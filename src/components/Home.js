@@ -162,8 +162,7 @@ const Home = () => {
         <SectionHeader title="skills" subtitle="My key expertises and technical proficiencies" description="Skilled in full stack development with strong expertise in C#, ASP.NET, SQL, and modern front-end frameworks like ReactJS, Tailwind, and Bootstrap — delivering scalable, responsive, and cloud-ready solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/rating.webm`} />
         <div className="flex p-10 max-w-6xl gap-4 flex-wrap justify-center text-white">
           {["JavaScript", "ReactJS", "SQL Server", "MySQL", "C#", "ASP.NET", "React Hook Form", "DotNet Core MVC", "DotNet Core Web API", "Bootstrap", "Tailwind CSS", "JQuery", "Entity Framework (EF)", "LINQ", "Azure",].map((skill) => (
-            <div key={skill} className="px-4 py-2 rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
-               text-white font-semibold shadow-lg animate-pulse">
+            <div key={skill} className="px-4 py-2 rounded-full text-white font-semibold border-2 border-gray-600 thunderlight">
               {skill}
             </div>
           ))}
