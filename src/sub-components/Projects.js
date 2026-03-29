@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { PiStepsDuotone } from "../icons"
 const UIProjectData = [
     {
-        title: "Login form", description: "Login form with capture code validation using React and JavaScript", link: "https://www.linkedin.com/in/abhishek-kumar-coder", level: "Beginner"
+        title: "Signup and Login UI", description: "A beginner‑friendly project featuring a sleek signup and login interface built with React, JavaScript and Tailwind CSS. The design highlights clean email and password fields, password confirmation, and terms validation, with a simple captcha for added security. Its dark theme and intuitive layout showcase practical authentication flow skills while remaining approachable for newcomers to web development.", link: "https://abhishek123git.github.io/signup-login-UI/", level: "Beginner", imgSrc: `${process.env.PUBLIC_URL}/images/login.webp`
     },
     {
-        title: "Signup form", description: "Signup form with email verification using React and JavaScript", link: "https://www.linkedin.com/in/abhishek-kumar-coder", level: "Beginner"
+        title: "Signup form", description: "Signup form with email verification using React and JavaScript", link: "https://www.linkedin.com/in/abhishek-kumar-coder", level: "Beginner",imgSrc: null
     },
     {
-        title: "Dashboard UI", description: "Dashboard UI with responsive design using React and Tailwind CSS", link: "https://www.linkedin.com/in/abhishek-kumar-coder", level: "Intermediate"
+        title: "Dashboard UI", description: "Dashboard UI with responsive design using React and Tailwind CSS", link: "https://www.linkedin.com/in/abhishek-kumar-coder", level: "Intermediate",imgSrc: null
     }
 ];
 
@@ -48,23 +49,29 @@ export function SectionHeader({ title, subtitle, description, imgSrc }) {
     <div className="flex flex-col items-center gap-4">
       <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
       <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
-      <p className="text-white/70 font-semibold text-sm md:text-md font-normal font-openSans text-center">{description}</p>
+      <p className="text-white/70 font-semibold text-sm md:text-md font-openSans text-center">{description}</p>
       <video className="rounded-full" src={imgSrc} autoPlay loop muted playsInline></video>
     </div>
   );
 }
 
 export function UIProjectSection() {
+  const [value, setValue] = useState(17);  
   return (
     <article className="flex flex-wrap max-w-6xl gap-4 h-auto px-4 py-2">
       {UIProjectData.map((project, index) => (
-      <Link key={index} to={project.link} target="_blank" className="flex-1 min-w-[250px] max-w-[300px] rounded-md">
+      <div key={index} className="flex-1 min-w-[250px] max-w-[300px] rounded-md">
         <div className="border border-gray-600 rounded-3xl p-4 hover:shadow-lg hover:border-gray-400 transition">
+          <img src={project.imgSrc} alt={project.title} className="w-full h-auto rounded-md mb-4" loading="lazy" />
           <p className="text-lg font-bold font-serif text-white mb-4">{project.title}</p>
-          <p className="text-sm text-gray-400 font-openSans">{project.description}</p>
-          <p className={`text-sm mt-2 font-openSans ${project.level === "Beginner" ? "text-green-500" : project.level === "Intermediate" ? "text-yellow-500" : project.level === "Advanced" ? "text-red-500" : "text-gray-400"}`}><PiStepsDuotone className="w- 8 h-auto text-white inline-block mr-1 animate-pulse" /> : {project.level}</p>
+          <p className="text-sm text-gray-400 font-openSans mb-4">{project.description ? project.description.split(" ").slice(0, value).join(" ") : ""} <button className="text-blue-400 text-sm hover:underline" onClick={() => setValue(value === 17 ? project.description.split(" ").length : 17)}>{value === 17 ? "Read More" : "Show Less"}</button> </p>
+          <div className="flex justify-between">
+            <p className={`text-sm mt-2 font-openSans ${project.level === "Beginner" ? "text-green-500" : project.level === "Intermediate" ? "text-yellow-500" : project.level === "Advanced" ? "text-red-500" : "text-gray-400"}`}><PiStepsDuotone className="w- 8 h-auto text-white inline-block mr-1 animate-pulse" /> : {project.level}</p>
+            <Link to={project.link} target="_blank" className="text-sm text-blue-500 hover:underline mt-2 block">View Demo</Link>
+          </div>
+          
         </div>
-      </Link>
+      </div>
       ))}
     </article>
   );

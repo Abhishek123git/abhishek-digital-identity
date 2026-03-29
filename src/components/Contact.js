@@ -56,16 +56,16 @@ const Contact = () => {
                 <div className="flex flex-col w-full">
                   <input type="text" placeholder="Your Name" autoComplete="off" className="p-3 rounded-lg bg-transparent text-white border border-gray-600" {...register("name", { required: true, maxLength: { value: 30, message: "Name must be less than 30 characters" }, validate: (value) => /^[A-Za-z]+(?:\s[A-Za-z]+)?$/.test(value) || "Only letters with at most one space allowed" })} />
                   {errors.name && <span className="text-sm text-[#ff3838] font-semibold my-1 mx-1">{errors.name.message}</span>}
-                  {errors.name && <span className="flex items-center inline-flex text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="mr-1" />Name is required</span>}
+                  {errors.name && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="mr-1" />Name is required</span>}
                 </div>
                 <div className="flex flex-col w-full">
                   <input type="email" placeholder="Your Email" autoComplete="off" className="w-full p-3 rounded-lg bg-transparent text-white border border-gray-600" {...register("email", { required: true, maxLength: { value: 50, message: "Email must be less than 50 characters" }, validate: (value) => /^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com)$/.test(value) || "Please enter a valid email address (gmail.com or outlook.com only)" })} />
                   {errors.email && <span className="text-sm text-[#ff3838] font-semibold my-1 mx-1">{errors.email.message}</span>}
-                  {errors.email && <span className="flex items-center inline-flex text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Email is required</span>}
+                  {errors.email && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Email is required</span>}
                 </div>
               </div>
               <textarea placeholder="Your Message" className="p-3 rounded-lg bg-transparent text-white border border-gray-600 h-32 resize-none" {...register("message", { required: true, maxLength: 100 })} />
-              {errors.message && <span className="flex items-center inline-flex text-sm text-[#ff3838] font-semibold mx-1"><BiSolidErrorAlt className="inline mr-1" />Message is required</span>}
+              {errors.message && <span className="flex items-center text-sm text-[#ff3838] font-semibold mx-1"><BiSolidErrorAlt className="inline mr-1" />Message is required</span>}
               <div className="flex items-center justify-center w-full">
                 <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-40 border border-gray-600 rounded-lg cursor-pointer bg-transparent hover:bg-gray-800 transition">
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
