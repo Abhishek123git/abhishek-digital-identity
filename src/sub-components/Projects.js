@@ -3,7 +3,7 @@ import { useState } from "react";
 import { PiStepsDuotone } from "../icons"
 const UIProjectData = [
     {
-        title: "Signup and Login UI", description: "A beginner‑friendly project featuring a sleek signup and login interface built with React, JavaScript and Tailwind CSS. The design highlights clean email and password fields, password confirmation, and terms validation, with a simple captcha for added security. Its dark theme and intuitive layout showcase practical authentication flow skills while remaining approachable for newcomers to web development.", link: "https://abhishek123git.github.io/signup-login-UI/", level: "Beginner", imgSrc: `${process.env.PUBLIC_URL}/images/login.webp`
+        title: "Signup and Login UI", description: "A beginner‑friendly project featuring a sleek signup and login interface built with React, JavaScript and Tailwind CSS. The design highlights clean email and password fields, password confirmation, and terms validation, with a simple captcha for added security. Its dark theme and intuitive layout showcase practical authentication flow skills while remaining approachable for newcomers to web development.", link: "https://abhishek123git.github.io/signup-login-UI/", level: "Beginner", imgSrc: `${process.env.PUBLIC_URL}/images/signup.webp`
     },
     {
         title: "Signup form", description: "Signup form with email verification using React and JavaScript", link: "https://www.linkedin.com/in/abhishek-kumar-coder", level: "Beginner",imgSrc: null
