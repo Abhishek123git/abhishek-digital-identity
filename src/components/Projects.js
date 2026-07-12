@@ -24,20 +24,14 @@ const Projects = () => {
               <span className="block dark:text-white text-xs sm:text-md md:text-lg">DotNET MVC</span>
             </button>
           </div>
-          {activeCategory === "UI/UX" && (            
-              <UIProjectSection title="Nike Shoes Online Store UI Clone" description="This responsive front-end clone of Nike's online store highlights dynamic design, intuitive navigation, and my expertise in HTML, CSS, JavaScript, and responsive design." link="/projects/project-one"/>            
-          )}
-          {activeCategory === "Web API" && (           
-              <APIProjectSection title="Weather Forecast API" description="A RESTful API built with Node.js and Express that provides accurate weather forecasts, demonstrating my skills in backend development and API design." link="/projects/project-two"/>            
-          )}
-          {activeCategory === "DotNET MVC" && (            
-              <MVCProjectSection title="E-commerce Platform" description="A full-featured e-commerce platform developed using ASP.NET MVC, showcasing my ability to create scalable web applications with robust functionality." link="/projects/project-three"/>            
-          )}
+          {activeCategory === "UI/UX" && ( <UIProjectSection /> )}
+          {activeCategory === "Web API" && ( <APIProjectSection /> )}
+          {activeCategory === "DotNET MVC" && ( <MVCProjectSection /> )}
         </div>
       </section>
 
       <section className="flex flex-col text-center w-full justify-center items-center gap-6 md:gap-10 px-4 mb-10">        
-        <SectionHeader title="STEP INTO MY CODE VAULT" subtitle="Don't forget to meet my enchanters! (click for context)" description="A vault of code, creativity, and contributions and Unlock projects that power my digital journey" imgSrc={`${process.env.PUBLIC_URL}/gifs/project.webm`} />
+        <SectionHeader title="STEP INTO MY CODE VAULT" subtitle="Don't forget to meet my enchanters! (click for context)" description="A vault of code, creativity, and contributions and unlock projects that power my digital journey" imgSrc={`${process.env.PUBLIC_URL}/gifs/project.webm`} />
         <div className="flex justify-center flex-wrap gap-4 max-w-6xl h-auto py-4 px-4">
           <Link to="https://github.com/Abhishek123git" className="px-4 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300" target="_blank" rel="noopener noreferrer">
             github.com/Abhishek123git

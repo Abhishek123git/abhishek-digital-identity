@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { QRCode} from "react-qr-code";
-import { ReactLight, TailwindCSS, JavaScript, TypeScript, Java, HTML5, Bootstrap, MicrosoftNET, MicrosoftSQLServer, MySQLLight, MongoDBLight, VisualStudioCode, VisualStudio, Swagger, Postman } from "@ridemountainpig/svgl-react";
+import { ReactLight, TailwindCSS, JavaScript, TypeScript, Java, HTML5, Bootstrap, MicrosoftNET, CSharp, MicrosoftSQLServer, MySQLLight, MongoDBLight, VisualStudioCode, VisualStudio, Swagger, Postman } from "@ridemountainpig/svgl-react";
 import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";
 import { GiCheckMark, FaDownload, IoQrCodeOutline } from "../icons";
 import { SectionHeader, CertificateCard } from "../sub-components/Home";
@@ -86,6 +86,7 @@ const Home = () => {
             </div>
             <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
               <li><MicrosoftNET width={60} height={60} /></li>
+              <li><CSharp width={60} height={60} /></li>
             </ul>
           </li>
           {/* Frontends */}
