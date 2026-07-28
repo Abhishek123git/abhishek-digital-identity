@@ -13,7 +13,7 @@ const Home = () => {
     <>
       <section className="w-full max-w-6xl py-8 sm:py-16 mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-          <span className="text-white flex items-center">Hi, I am <video className="inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.webm`} playsInline autoPlay loop muted></video></span>
+          <span className="text-white flex items-center">Hi, I am <video className="inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.webm`} playsInline autoPlay loop muted aria-hidden="true"></video></span>
           <span className="mt-4 block text-emerald-500">Abhishek Kumar</span>
         </h1>
         <div className="grid grid-cols-2 gap-4 mt-6 w-full text-base text-white/75 text-justify items-stretch">

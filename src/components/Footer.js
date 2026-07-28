@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
           <div className="space-y-4">
             <p className="text-white font-semibold font-openSans underline underline-offset-4 decoration-[#6c5ce7] text-base">Get in Touch</p>
-            <Link to="mailto:mp1445747@gmail.com" className="flex items-center text-gray-400 hover:text-white transition-all duration-300 ease-out text-sm font-openSans flex items-center group">
+            <Link to="mailto:mp1445747@gmail.com" className="flex items-center text-gray-400 hover:text-white transition-all duration-300 ease-out text-sm font-openSans group">
               <CgMail className="w-6 h-auto transform transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:text-[#3742fa] group-hover:animate-pulse" />
               <span className="ml-2 relative">abhi120730@gmail.com<span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white transition-all duration-300 ease-out group-hover:w-full"></span></span>
             </Link>

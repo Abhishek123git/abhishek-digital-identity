@@ -33,7 +33,7 @@ const About = () => {
           </p>
           <p className="text-gray-400 mb-4 text-base text-justify">
             Full Stack Developer with hands-on experience in <TbBrandCSharp className="inline-block mr-1 size-5" />, <BiLogoJava className="inline-block mr-1 size-5" />, <GrReactjs className="inline-block mr-1 size-5" />, <TbBrandJavascript className="inline-block mr-1 size-5" />, and <BsFillDatabaseFill className="inline-block mr-1 size-5" />. Skilled in building scalable web applications using ASP.NET, Web API, and responsive UI with <GrReactjs className="inline-block mr-1 size-5" />, <DiJqueryLogo className="inline-block mr-1 size-5" />, and <FaBootstrap className="inline-block mr-1 size-5" />.
-            I’ve contributed to company websites and enterprise apps, working across both front-end and back-end. Proficient with tools like <FaGithub className="inline-block mr-1 size-5" />, <SiJira className="inline-block mr-1 size-4" />, <DiVisualstudio className="inline-block mr-1 size-5" />, and <VscVscode className="inline-block mr-1 size-5" />.
+            I’ve contributed to company websites and enterprise apps, working across both front-end and back-end. Proficient with tools like <FaGithub className="inline-block mr-1 size-5" aria-label="GitHub" />, <SiJira className="inline-block mr-1 size-4" aria-label="Jira" />, <DiVisualstudio className="inline-block mr-1 size-5" aria-label="Visual Studio" />, and <VscVscode className="inline-block mr-1 size-5" aria-label="VS Code" />.
             With a B.Tech in IT, I'm focused on growing as a full stack developer and creating clean, efficient digital solutions.
           </p>
         </div>

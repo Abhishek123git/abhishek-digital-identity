@@ -4,32 +4,32 @@ const dataObject = [
     {
         name: "Home",
         link: "/",
-        icon: <RiHomeSmileLine className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#eb2f06]" />
+        icon: <RiHomeSmileLine className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#eb2f06]" aria-label="Home icon" />
     },
     {
         name: "About",
         link: "about",
-        icon: <CgProfile className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#1B1464]" />
+        icon: <CgProfile className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#1B1464]" aria-label="About icon" />
     },
     {
         name: "Projects",
         link: "projects",
-        icon: <FaProjectDiagram className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#6D214F]" />
+        icon: <FaProjectDiagram className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#6D214F]" aria-label="Projects icon" />
     },
     {
         name: "Resume",
         link: "https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link",
-        icon: <SiReaddotcv className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#d35400]" />
+        icon: <SiReaddotcv className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#d35400]" aria-label="Read CV icon" />
     },
     {
         name: "Contact",
         link: "contact",
-        icon: <GrPhone className="w-5 h-auto mr-2 inline-block group-hover:text-[#009432] animate-pingSmall" />
+        icon: <GrPhone className="w-5 h-auto mr-2 inline-block group-hover:text-[#009432] animate-pingSmall" aria-label="Contact icon" />
     },
     {
         name: "Fork Project",
         link: "https://github.com/Abhishek123git/abhishek-digital-identity",
-        icon: <FaGithub className="w-5 h-auto mr-2 inline-block group-hover:text-black" />
+        icon: <FaGithub className="w-5 h-auto mr-2 inline-block group-hover:text-black" aria-label="Fork Project icon" />
     }
 ];
 

@@ -9,24 +9,22 @@ export function SectionHeader({ title, subtitle, description, imgSrc }) {
       <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
       <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
       <p className="text-white/70 font-semibold text-sm md:text-md font-openSans text-center">{description}</p>
-      <video className="rounded-full" src={imgSrc} playsInline autoPlay loop muted />
+      <video className="rounded-full" src={imgSrc} playsInline autoPlay loop muted aria-hidden="true" />
     </div>
   );
 }
 
 // Component for displaying a journey timeline with year, header, and description
 export function JourneyComponent({ year, headerText, descriptionText }) {
-
-    return (
-        <div className="flex justify-start md:gap-10 my-8">
-            <p className="flex items-center text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 group"><SlCalender className="w-8 h-auto mr-2 group-hover:animate-calenderColor" />{year}</p>
-            <div className="pl-20 pr-4 md:pl-4 w-full border-b-2 border-neutral-500">
-                <p className="text-white text-lg md:text-xl font-bold font-inter mb-2">{headerText}</p>
-                <p className="text-white/70 font-semibold text-sm md:text-md font-openSans mb-8 text-justify">{descriptionText}</p>
-            </div>
-        </div>
-    );
-
+  return (
+      <div className="flex justify-start md:gap-10 my-8">
+          <p className="flex items-center text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 group"><SlCalender className="w-8 h-auto mr-2 group-hover:animate-calenderColor" />{year}</p>
+          <div className="pl-20 pr-4 md:pl-4 w-full border-b-2 border-neutral-500">
+              <p className="text-white text-lg md:text-xl font-bold font-inter mb-2">{headerText}</p>
+              <p className="text-white/70 font-semibold text-sm md:text-md font-openSans mb-8 text-justify">{descriptionText}</p>
+          </div>
+      </div>
+  );
 }
 
 // Component for displaying coding milestones with an image and a link
@@ -60,9 +58,9 @@ export function Counter({ end, duration, label }) {
   }, [end, duration]);
 
   return (
-      <div className="px-2 py-4 flex flex-col justify-center items-center">
-          <h2 className="text-[32px] font-bold text-[#f1f2f6]">+{count}</h2>
-          <span className="block text-gray-400 text-base font-medium leading-5 mt-2 uppercase">{label}</span>
-      </div>
+    <div className="px-2 py-4 flex flex-col justify-center items-center">
+      <h2 className="text-[32px] font-bold text-[#f1f2f6]">+{count}</h2>
+      <span className="block text-gray-400 text-base font-medium leading-5 mt-2 uppercase">{label}</span>
+    </div>
   );
 }
