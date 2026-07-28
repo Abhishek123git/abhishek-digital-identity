@@ -1,16 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { QRCode} from "react-qr-code";
-import { ReactLight, TailwindCSS, JavaScript, TypeScript, Java, HTML5, Bootstrap, MicrosoftNET, CSharp, MicrosoftSQLServer, MySQLLight, MongoDBLight, VisualStudioCode, VisualStudio, Swagger, Postman } from "@ridemountainpig/svgl-react";
+import { QRCode } from "react-qr-code";
+import { Helmet } from "react-helmet";
+import { ReactLight, TailwindCSS, JavaScript, TypeScript, Java, HTML5, Bootstrap, MicrosoftNET, CSharp, MicrosoftSQLServer, MySQLLight, MongoDBLight, VisualStudioCode, VisualStudio, Swagger, Postman, Netlify, VercelLight, AmazonWebServicesLight } from "@ridemountainpig/svgl-react";
 import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";
 import { GiCheckMark, FaDownload, IoQrCodeOutline } from "../icons";
 import { SectionHeader, CertificateCard } from "../sub-components/Home";
 
-const Home = () => {
+const Home = ({ title, description, imageUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCvFormatOpen, setIsCvFormatOpen] = useState(false);
   return (
     <>
+      <Helmet>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <section className="w-full max-w-6xl py-8 sm:py-16 mx-auto">
         <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
           <span className="text-white flex items-center">Hi, I am <video className="inline-block ml-4" src={`${process.env.PUBLIC_URL}/gifs/wave.webm`} playsInline autoPlay loop muted aria-hidden="true"></video></span>
@@ -32,7 +40,7 @@ const Home = () => {
             <img className="rounded-full w-[300px] h-[300px]" src={`${process.env.PUBLIC_URL}/images/Abhishek_pro.webp`} alt="abhishek_pro" loading="lazy" />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center max-w-5xl mt-16 border rounded-lg border-gray-600 mx-auto p-6 hover:bg-[#303952] hover:border-0 group">
+        <div className="flex flex-col items-center justify-center max-w-5xl mt-16 border rounded-lg border-gray-600 mx-auto p-6 hover:bg-[#576079] hover:border-0 group">
           <div className="flex flex-row items-center justify-center space-x-4">
             <Link className="flex justify-center items-center my-4 py-3 px-8 text-white border-2 rounded-full transition-colors duration-300 hover:text-[#0abde3] hover:bg-[#d0f0f0]" onClick={() => setIsCvFormatOpen(true)}>
               <FaDownload className="w-6 h-auto mr-2 inline-block animate-bounce" />
@@ -69,7 +77,7 @@ const Home = () => {
         <SectionHeader title="technologies" subtitle="Here's what I typically work with" description="This section highlights my core technical expertise across programming languages, front‑end frameworks, back‑end platforms, tools, and databases—demonstrating versatility and proficiency in full stack development. This version keeps it sharp and professional, perfect for portfolios where recruiters want to quickly grasp your skill set." imgSrc={`${process.env.PUBLIC_URL}/gifs/settings.webm`} />
         <ul className="mx-auto mt-6 grid gap-[1em] md:grid-cols-2 lg:grid-cols-3">
           {/* Languages */}
-          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
+          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#576079]">
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Languages</div>
             </div>
@@ -80,7 +88,7 @@ const Home = () => {
             </ul>
           </li>
           {/* Backends */}
-          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
+          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#576079]">
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Backend</div>
             </div>
@@ -90,19 +98,19 @@ const Home = () => {
             </ul>
           </li>
           {/* Frontends */}
-          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
+          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#576079]">
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Frontends</div>
             </div>
-            <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">              
-              <li><HTML5 width={60} height={60} /></li>                            
+            <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
+              <li><HTML5 width={60} height={60} /></li>
               <li><Bootstrap width={60} height={60} /></li>
               <li><ReactLight width={60} height={60} /></li>
               <li><TailwindCSS width={60} height={60} /></li>
             </ul>
           </li>
           {/* Databases */}
-          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
+          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#576079]">
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Databases</div>
             </div>
@@ -111,9 +119,20 @@ const Home = () => {
               <li><MySQLLight width={60} height={60} /></li>
               <li><MongoDBLight width={60} height={60} /></li>
             </ul>
-          </li> 
+          </li>
+          {/* Hosting */}
+          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#576079]">
+            <div className="flex border-b-2 border-red-500">
+              <div className="text-lg font-semibold text-white">Hosting</div>
+            </div>
+            <ul className="mx-auto mt-8 flex flex-row flex-wrap justify-between gap-9 text-center ">
+              <li><Netlify width={60} height={60} /></li>
+              <li><VercelLight width={60} height={60} /></li>
+              <li><AmazonWebServicesLight width={60} height={60} /></li>
+            </ul>
+          </li>
           {/* Tools */}
-          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#303952]">
+          <li className="mb-2 break-inside-avoid rounded-lg bg-[#2f3640] p-5 hover:bg-[#576079]">
             <div className="flex border-b-2 border-red-500">
               <div className="text-lg font-semibold text-white">Tools</div>
             </div>
@@ -123,7 +142,7 @@ const Home = () => {
               <li><Swagger width={60} height={60} /></li>
               <li><Postman width={60} height={60} /></li>
             </ul>
-          </li>                   
+          </li>
         </ul>
       </section>
       {/* Technology section end */}

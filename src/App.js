@@ -17,8 +17,8 @@ function App() {
           <Navbar />
           <main className="flex-grow flex flex-col bg-[#262626]">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/abhishek-digital-identity" element={<Home />} />
+              <Route path="/" element={<Home title="Abhishek Kumar - Full Stack Developer" description="Welcome to my portfolio! Explore projects and experience in ASP.NET MVC, JavaScript, and SQL Server, with a focus on building scalable, secure, and user-friendly web applications." imageUrl={`${process.env.PUBLIC_URL}/images/og-homeimage.png`} />} />
+              <Route path="/abhishek-digital-identity" element={<Home title="Abhishek Kumar - Digital Identity" description="Welcome to my portfolio! Explore projects and experience in ASP.NET MVC, JavaScript, and SQL Server, with a focus on building scalable, secure, and user-friendly web applications." imageUrl={`${process.env.PUBLIC_URL}/images/og-homeimage.png`} />} />
               <Route path="about" element={<About />} />
               <Route path="projects" element={<Projects />} />
               <Route path="contact" element={<Contact />} />
