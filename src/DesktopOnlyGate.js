@@ -39,7 +39,7 @@ export default function DesktopOnlyGate({ children }) {
   if (!isMobile) return children;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-neutral-950/95 backdrop-blur-sm px-6">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-neutral-950/95 px-6">
       <div className="max-w-sm w-full rounded-2xl border border-neutral-800 bg-neutral-900 p-8 text-center shadow-2xl">
         <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-neutral-800">
           <Monitor className="h-7 w-7 text-neutral-200" strokeWidth={1.5} />
@@ -53,7 +53,7 @@ export default function DesktopOnlyGate({ children }) {
           desktop or laptop browser to continue.
         </p>
 
-        <div className="mt-6 flex items-center justify-center gap-2 text-xs text-neutral-500">
+        <div className="mt-6 flex items-center justify-center gap-2 text-xs text-neutral-400">
           <Smartphone className="h-3.5 w-3.5" strokeWidth={1.5} />
           <span>Mobile view is currently unsupported</span>
         </div>

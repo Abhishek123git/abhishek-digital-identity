@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <>
       <section className="flex justify-center flex-col px-2 md:px-10 py-4 w-full mx-auto min-h-[42vh] text-white">
-        <h2 className="text-2xl md:text-6xl font-serif font-bold text-center">Crafting Digital Realities</h2>
+        <h2 className="text-2xl md:text-6xl font-bold text-center">Crafting Digital Realities</h2>
         <p className="text-sm font-openSans md:text-2xl mt-6 text-center">Witness the evolution of ideas into impactful creations—one line of code at a time.</p>
       </section>
       <section className="flex justify-center items-center flex-col px-2 mt-[100px] mb-10 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">

@@ -1,5 +1,5 @@
 import { MdStarPurple500, TbBrandCSharp, BiLogoJava, GrReactjs, TbBrandJavascript, BsFillDatabaseFill, FaGithub, FaBootstrap, DiJqueryLogo, SiJira, DiVisualstudio, VscVscode, CgMoreO, ImArrowRight } from "../icons";
-import { JourneyComponent, CodingMilestones, Counter, SectionHeader } from "../sub-components/About";
+import { JourneyComponent, CodingMilestones, Counter, SectionHeader, SkillCards } from "../sub-components/About";
 const About = () => {
 
   return (
@@ -7,7 +7,7 @@ const About = () => {
       <section className="grid grid-rows-3 gap-2 p-3 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
         <div className="grid gap-2 place-items-center rounded-lg p-2">
           <div className="flex flex-col justify-center items-center">
-            <img src={`${process.env.PUBLIC_URL}/images/profile.webp`} alt="Profile" loading="lazy" className="flex-auto w-[278px] h-[278px] rounded-lg hover:scale-105 transition-transform duration-300" />
+            <img src={`${process.env.PUBLIC_URL}/images/profile.webp`} alt="Profile" fetchPriority="high" width={250} height={250} className="flex-auto rounded-lg hover:scale-105 transition-transform duration-300" />
             <span className="text-white px-2 py-4 text-center text-2xl font-semibold" style={{ "fontFamily": "Courgette, Comic Sans MS" }}>Abhishek Kumar</span>
             <span className="block text-sm bg-[#b2bec3] rounded-lg px-4 py-2 text-gray-800 font-semibold  mt-1">Full Stack Developer</span>
           </div>
@@ -54,6 +54,20 @@ const About = () => {
             </ul>
           </div>
         </div>
+      </section>
+
+      <section className="flex flex-col gap-6 p-3 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
+        <SectionHeader title="Value I Deliver" subtitle="Why Work With Me?" 
+        description="My passion to dig business insights out of raw data provides me an edge to complete the tasks swiftly. 
+        I'm accountable and highly focussed to deliver results and tend to go an extra mile to improve the process and quality of the solution. 
+        Also, my abilities of being a quick learner & experience of working in a collaborated team as well independently have enabled successful project outcome. 
+        I am resilient to any changes as the world is continuously evolving and so should we." imgSrc={`${process.env.PUBLIC_URL}/gifs/think.webm`} />
+
+        <p className="text-white/70 font-semibold text-sm md:text-md font-openSans text-center">
+          I would bring expertise on these 8 aspects of Data Engineering & Science, which will make sure, the Products,
+          Solutions and Services that you offer continue to be at par-industry-standard, robust and market leader.
+        </p>
+        <SkillCards />
       </section>
 
       {/* Journey section start */}

@@ -300,7 +300,7 @@ function CertificateCard({ imgSrc, altText, issuedBy, earnedOn, link }) {
         <span className="text-sm font-semibold text-[#e1b12c] mb-2 normal-case">
           Earned On : <span className="font-semibold text-gray-400 text-sm normal-case">{earnedOn}</span>
         </span>
-        <Link to={link} className="px-6 py-3 bg-purple-500 text-black font-semibold rounded-lg hover:bg-purple-600 transition-colors duration-300" target="_blank" rel="noreferrer"> Check Details </Link>
+        <Link to={link} className="px-6 py-3 bg-purple-500 text-black font-semibold rounded-lg hover:bg-purple-600 transition-colors duration-300" target="_blank" rel="noreferrer" aria-label={`Check details for ${altText}`}> Check Details </Link>
       </div>
      </div>
    );

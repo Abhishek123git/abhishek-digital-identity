@@ -79,7 +79,7 @@ const Contact = () => {
                 </label>
               </div>
               <div className="flex flex-row gap-3 my-3">
-                <p className="w-full text-sm font-semibold text-gray-400">This site is protected by reCAPTCHA and the <Link to="https://policies.google.com/privacy" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Google Privacy Policy</Link> and <Link to="https://policies.google.com/terms" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Terms of Service</Link> apply.</p>
+                <p className="w-full text-sm font-semibold text-gray-400">This site is protected by reCAPTCHA and the <Link to="https://policies.google.com/privacy" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Google Privacy Policy</Link> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Terms of Service</a> apply.</p>
                 <button type="submit" className="flex border border-gray-600 text-white whitespace-nowrap py-2 px-4 rounded-lg font-semibold hover:bg-purple-500 transition-colors duration-300"><BsFillSendArrowUpFill className="w-5 h-auto mr-2 text-[#44bd32]" /> Send Message</button>
               </div>
             </form>

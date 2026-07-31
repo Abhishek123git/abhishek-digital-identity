@@ -88,7 +88,9 @@ export function UIProjectSection() {
             </p>
             <div className="flex justify-between">
               <p className={`text-sm mt-2 font-openSans ${project.level === "Beginner" ? "text-green-500" : project.level === "Intermediate" ? "text-yellow-500" : project.level === "Advanced" ? "text-red-500" : "text-gray-400"}`}><PiStepsDuotone className="w- 8 h-auto text-white inline-block mr-1 animate-pulse" /> : {project.level}</p>
-              <Link to={project.link} target="_blank" className="text-sm text-blue-500 hover:underline mt-2 block">View Demo</Link>
+              <Link to={project.link} target="_blank" className="text-sm text-white hover:underline mt-2 block" aria-label={`Check details for ${project.title}`}>
+                View Demo
+              </Link>
             </div>
 
           </div>
