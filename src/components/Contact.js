@@ -1,20 +1,40 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
+import { GrPhone, CgMail, BsFillSendArrowUpFill, BiSolidErrorAlt, MdOutlineContactMail, GiArchiveRegister } from "../icons";
 import { SectionHeader, SocialMediaSection } from "../sub-components/Contact";
-import { GrPhone, CgMail, FaDownload, BsFillSendArrowUpFill, BiSolidErrorAlt, MdOutlineContactMail, GiArchiveRegister } from "../icons";
 import { SuccessModal } from "../sub-components/Model";
+import { useContactForm } from "../hooks/useContactForm";
+import FileDropzone from "../components/FileDropzone";
+
+const EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com)$/;
+const NAME_PATTERN = /^[A-Za-z]+(?:\s[A-Za-z]+)?$/;
 
 const Contact = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
-    if (data) {
-      setIsOpen(true); // open modal
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({ mode: "onBlur" });
+
+  const { file, fileError, handleFile, removeFile, sendStatus, sendError, isSending, send, resetStatus } =
+    useContactForm({ onSuccess: () => setIsOpen(true) });
+
+  const onSubmit = async (data) => {
+    const result = await send(data);
+    if (result.ok) {
+      reset();           
     }
   };
 
+  const handleModalClose = () => {
+    setIsOpen(false);
+    resetStatus();
+  };
 
   return (
     <>
@@ -43,7 +63,7 @@ const Contact = () => {
             </div>
             <div className="flex justify-end flex-auto">
               <div className="p-3 bg-[#dfe6e9] rounded-xl hover:scale-105 transition-transform duration-300">
-                <img src={`${process.env.PUBLIC_URL}/images/contact-qr-code.webp`} alt="QR" loading="lazy" />
+                <img src={`${process.env.PUBLIC_URL}/images/contact-qr-code.webp`} width={160}  height={160} alt="QR" loading="lazy" />
               </div>
             </div>
           </div>
@@ -54,36 +74,59 @@ const Contact = () => {
             <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-row gap-3" >
                 <div className="flex flex-col w-full">
-                  <input type="text" placeholder="Your Name" autoComplete="off" className="p-3 rounded-lg bg-transparent text-white border border-gray-600" {...register("name", { required: true, maxLength: { value: 30, message: "Name must be less than 30 characters" }, validate: (value) => /^[A-Za-z]+(?:\s[A-Za-z]+)?$/.test(value) || "Only letters with at most one space allowed" })} />
+                  <input type="text" placeholder="Your Name" autoComplete="off" disabled={isSending} className="p-3 rounded-lg bg-transparent text-white border border-gray-600 disabled:opacity-50" {...register("name", { required: true, maxLength: { value: 30, message: "Name must be less than 30 characters" }, validate: (value) => NAME_PATTERN.test(value) || "Only letters with at most one space allowed" })} />
                   {errors.name && <span className="text-sm text-[#ff3838] font-semibold my-1 mx-1">{errors.name.message}</span>}
-                  {errors.name && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="mr-1" />Name is required</span>}
+                  {errors.name && !errors.name.message && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="mr-1" />Name is required</span>}
                 </div>
                 <div className="flex flex-col w-full">
-                  <input type="email" placeholder="Your Email" autoComplete="off" className="w-full p-3 rounded-lg bg-transparent text-white border border-gray-600" {...register("email", { required: true, maxLength: { value: 50, message: "Email must be less than 50 characters" }, validate: (value) => /^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com)$/.test(value) || "Please enter a valid email address (gmail.com or outlook.com only)" })} />
+                  <input type="email" placeholder="Your Email" autoComplete="off" disabled={isSending} className="w-full p-3 rounded-lg bg-transparent text-white border border-gray-600 disabled:opacity-50" {...register("email", { required: true, maxLength: { value: 50, message: "Email must be less than 50 characters" }, validate: (value) => EMAIL_PATTERN.test(value) || "Please enter a valid email address (gmail.com or outlook.com only)" })} />
                   {errors.email && <span className="text-sm text-[#ff3838] font-semibold my-1 mx-1">{errors.email.message}</span>}
-                  {errors.email && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Email is required</span>}
+                  {errors.email && !errors.email.message && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Email is required</span>}
                 </div>
               </div>
-              <textarea placeholder="Your Message" className="p-3 rounded-lg bg-transparent text-white border border-gray-600 h-32 resize-none" {...register("message", { required: true, maxLength: 100 })} />
-              {errors.message && <span className="flex items-center text-sm text-[#ff3838] font-semibold mx-1"><BiSolidErrorAlt className="inline mr-1" />Message is required</span>}
-              <div className="flex items-center justify-center w-full">
-                <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-40 border border-gray-600 rounded-lg cursor-pointer bg-transparent hover:bg-gray-800 transition">
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                    <FaDownload className="w-8 h-auto mb-3 text-[#0abde3] animate-bounce" />
-                    <p className="mb-2 text-sm text-gray-400">
-                      <span className="font-semibold">Click to upload</span> or drag and drop <span className="font-semibold text-[#0abde3]">(Optional)</span>
-                    </p>
-                    <p className="text-sm text-gray-400">PDF only (max 10MB)</p>
-                  </div>
-                  <input id="dropzone-file" type="file" accept=".pdf" className="hidden" />
-                </label>
+              <div className="flex flex-col w-full">
+                <input type="text" placeholder="Your Subject" autoComplete="off" disabled={isSending} className="w-full p-3 rounded-lg bg-transparent text-white border border-gray-600 disabled:opacity-50" {...register("subject", { required: true, maxLength: { value: 100, message: "Subject must be less than 100 characters" } })} />
+                {errors.subject && <span className="text-sm text-[#ff3838] font-semibold my-1 mx-1">{errors.subject.message}</span>}
+                {errors.subject && !errors.subject.message && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Subject is required</span>}
               </div>
-              <div className="flex flex-row gap-3 my-3">
+              <textarea placeholder="Your Message" disabled={isSending} className="p-3 rounded-lg bg-transparent text-white border border-gray-600 h-32 resize-none disabled:opacity-50" {...register("message", { required: true, maxLength: 500 })} />
+              {errors.message && <span className="flex items-center text-sm text-[#ff3838] font-semibold"><BiSolidErrorAlt className="inline mr-1" />Message is required</span>}
+
+              <FileDropzone
+                file={file}
+                error={fileError}
+                onFileSelect={handleFile}
+                onRemove={removeFile}
+                disabled={isSending}
+              />
+
+              {sendStatus === "error" && (
+                <div className="flex items-center gap-2 text-sm text-[#ff3838] font-semibold bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
+                  <BiSolidErrorAlt />
+                  {sendError}
+                </div>
+              )}
+
+              <div className="flex flex-row gap-3 my-3 items-center">
                 <p className="w-full text-sm font-semibold text-gray-400">This site is protected by reCAPTCHA and the <Link to="https://policies.google.com/privacy" target="_blank" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Google Privacy Policy</Link> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-[#0abde3] hover:underline hover:underline-offset-4 font-normal">Terms of Service</a> apply.</p>
-                <button type="submit" className="flex border border-gray-600 text-white whitespace-nowrap py-2 px-4 rounded-lg font-semibold hover:bg-purple-500 transition-colors duration-300"><BsFillSendArrowUpFill className="w-5 h-auto mr-2 text-[#44bd32]" /> Send Message</button>
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="flex items-center border border-gray-600 text-white whitespace-nowrap py-2 px-4 rounded-lg font-semibold hover:bg-purple-500 transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {isSending ? (
+                    <>
+                      <Loader2 className="w-5 h-auto mr-2 animate-spin" /> Sending...
+                    </>
+                  ) : (
+                    <>
+                      <BsFillSendArrowUpFill className="w-5 h-auto mr-2 text-[#44bd32]" /> Send Message
+                    </>
+                  )}
+                </button>
               </div>
             </form>
-            <SuccessModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+            <SuccessModal isOpen={isOpen} onClose={handleModalClose} />
           </div>
         </div>
       </section>

@@ -52,7 +52,7 @@ export function SocialMediaSection() {
                             </p>
                             <div className="flex flex-row my-3 justify-between">
                                 <span className="text-slate-400 py-2">{item.subtitle}</span>
-                                <Link className="flex clickLink justify-center items-center border-2 border-dashed rounded-[50%] p-2" aria-label={`Visit my ${item.title} profile`} to={item.link} target="_blank" rel="noreferrer">
+                                <Link className="flex justify-center items-center border-2 border-dashed rounded-[50%] p-2 h-auto w-10 hover:border hover:border-[#fffa65] hover:shadow-[0_0_5px_white,0_0_5px_white] transition-all duration-300 ease-in-out" aria-label={`Visit my ${item.title} profile`} to={item.link} target="_blank" rel="noreferrer">
                                     {item.icon2}
                                 </Link>
                             </div>
