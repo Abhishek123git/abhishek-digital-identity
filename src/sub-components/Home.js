@@ -4,6 +4,7 @@ import { ReactLight, TailwindCSS, JavaScript, TypeScript, Java,
   MongoDBLight, VisualStudioCode, VisualStudio, Swagger, Postman, Netlify, VercelLight, 
   AmazonWebServicesLight, Nodejs, Cloudflare, MicrosoftAzure  } from "@ridemountainpig/svgl-react";
 import { GiCheckMark, FaDownload, IoQrCodeOutline } from "../icons";  
+import GithubContributionCalendar from "../components/GithubContributionCalendar"
 
 /* ------------------------------------------------------------------ */
 /* Static data — module scope so it is created once, not per render.   */
@@ -157,8 +158,8 @@ export const HeroSection = ({ onCvClick, onQrClick }) => (
         Same Story, Multiple Formats, One Professional Journey Choose Your Format
       </span>
     </div>
-
-    <p className="font-serif text-white/75 text-5xl flex flex-wrap justify-center items-center leading-relaxed text-center font-light px-4 sm:px-6 md:px-8 mt-28">
+     <GithubContributionCalendar username="Abhishek123git" />;
+    <p className="font-serif text-white/75 text-5xl flex flex-wrap justify-center items-center leading-relaxed text-center font-light px-4 sm:px-6 md:px-8">
       I am a <span className="text-purple-500 mx-3">full‑stack developer</span> who thrives at the intersection of
       creativity and technology, transforming challenges into opportunities and ideas into impactful digital
       experiences. With an unwavering passion for innovation, I craft solutions that don&apos;t just solve problems

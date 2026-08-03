@@ -3,7 +3,6 @@ import { QRCode } from "react-qr-code";
 import { Helmet } from 'react-helmet-async';
 import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";  
 import { FaDownload, IoQrCodeOutline } from "../icons";  
-//import { SectionHeader, CertificateCard } from "../sub-components/Home";
 import { HeroSection, TechStackSection, ExperienceSection, SkillsSection, CertificatesSection } from "../sub-components/Home";
 
 const RESUME_QR_VALUE =
