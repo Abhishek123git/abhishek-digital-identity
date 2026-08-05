@@ -6,7 +6,7 @@ import { CgMail, IoLocationOutline, PiGithubLogoDuotone, LuLinkedin, FiInstagram
 
 export default function Footer() {
   return (
-    <footer className="bg-[#262626] text-gray-300 py-6 h-auto">
+    <footer className="bg-black text-gray-300 py-6 h-auto">
       <div className="container mx-auto px-4 flex justify-center items-center gap-4 max-w-6xl">
         <div className="grid grid-cols-4 gap-4 w-full">
           <div className="space-y-4 ">

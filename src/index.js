@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
 // import DesktopOnlyGate from "./DesktopOnlyGate";
 import './index.css';
 import App from './App';
@@ -15,11 +14,9 @@ if (redirect && redirect !== window.location.pathname) {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HelmetProvider>
-      {/* <DesktopOnlyGate> */}
-        <App />
-      {/* </DesktopOnlyGate>       */}
-    </HelmetProvider>
+    {/* <DesktopOnlyGate> */}
+    <App />
+    {/* </DesktopOnlyGate>       */}
   </React.StrictMode>
 );
 

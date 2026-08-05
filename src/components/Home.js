@@ -1,6 +1,5 @@
 import { useState,memo} from "react";
 import { QRCode } from "react-qr-code";
-import { Helmet } from 'react-helmet-async';
 import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";  
 import { FaDownload, IoQrCodeOutline } from "../icons";  
 import { HeroSection, TechStackSection, ExperienceSection, SkillsSection, CertificatesSection } from "../sub-components/Home";
@@ -9,20 +8,12 @@ const RESUME_QR_VALUE =
   "https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link";
 
 
-const Home = ({ title, description, imageUrl }) => {
+const Home = () => {
   const [isQrOpen, setIsQrOpen] = useState(false);
   const [isCvFormatOpen, setIsCvFormatOpen] = useState(false);
 
   return (
-    <>
-      <Helmet>
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={window.location.href} />
-        <meta property="og:type" content="website" />
-      </Helmet>
-
+    <>  
       <HeroSection onCvClick={() => setIsCvFormatOpen(true)} onQrClick={() => setIsQrOpen(true)} />
 
       <QrModal isOpen={isQrOpen} onClose={() => setIsQrOpen(false)}>
