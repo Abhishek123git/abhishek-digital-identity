@@ -133,11 +133,11 @@ export const HeroSection = ({ onCvClick, onQrClick }) => (
       </div>
       <div className="flex justify-center items-center">
         <img
-          className="rounded-full w-[300px] h-[300px]"
+          className="rounded-full w-[358px] h-[358px]"
           src={`${ASSET_BASE}/images/Abhishek_pro.webp`}
           alt="Portrait of Abhishek Kumar"
-          width={300}
-          height={300}
+          width={358}
+          height={358}
           loading="lazy"
         />
       </div>
