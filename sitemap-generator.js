@@ -1,5 +1,8 @@
 const { SitemapStream } = require('sitemap');
 const { createWriteStream } = require('fs');
+const pkg = require('./package.json');
+
+const hostname = pkg.config.site_url || 'http://localhost:3000';
 
 const links = [
   { url: '/', changefreq: 'daily', priority: 1.0 },
@@ -9,7 +12,7 @@ const links = [
   { url: '/contacts', changefreq: 'monthly', priority: 0.7 },
 ];
 
-const sitemap = new SitemapStream({ hostname: 'https://www.abhishekportfolio.com' });
+const sitemap = new SitemapStream({ hostname });
 const writeStream = createWriteStream('./public/sitemap.xml');
 
 // Pipe sitemap output into the file

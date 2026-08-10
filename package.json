@@ -3,6 +3,9 @@
   "name": "abhishek-portfolio-site",
   "version": "0.1.0",
   "private": true,
+  "config": {
+  "site_url": "https://www.abhishekportfolio.com"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@ridemountainpig/svgl-react": "^1.0.15",
