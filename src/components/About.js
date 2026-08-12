@@ -1,9 +1,11 @@
 import { MdStarPurple500, TbBrandCSharp, BiLogoJava, GrReactjs, TbBrandJavascript, BsFillDatabaseFill, FaGithub, FaBootstrap, DiJqueryLogo, SiJira, DiVisualstudio, VscVscode, CgMoreO, ImArrowRight } from "../icons";
 import { JourneyComponent, CodingMilestones, Counter, SectionHeader, SkillCards } from "../sub-components/About";
+import { HeadElement } from "../sub-components/HeadElement";
 const About = () => {
 
   return (
     <>
+      <HeadElement pageurl="about" pagetitle="About Us" pagedescription="Discover more about Abhishek Kumar, a full‑stack developer with expertise in React, Blazor, ASP.NET, and modern UI/UX. Learn about his background, skills, and passion for building scalable, accessible, and user‑friendly web applications." />
       <section className="grid grid-rows-3 gap-2 p-3 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
         <div className="grid gap-2 place-items-center rounded-lg p-2">
           <div className="flex flex-col justify-center items-center">
@@ -57,8 +59,8 @@ const About = () => {
       </section>
 
       <section className="flex flex-col gap-6 p-3 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
-        <SectionHeader title="Value I Deliver" subtitle="Why Work With Me?" 
-        description="My passion to dig business insights out of raw data provides me an edge to complete the tasks swiftly. 
+        <SectionHeader title="Value I Deliver" subtitle="Why Work With Me?"
+          description="My passion to dig business insights out of raw data provides me an edge to complete the tasks swiftly. 
         I'm accountable and highly focussed to deliver results and tend to go an extra mile to improve the process and quality of the solution. 
         Also, my abilities of being a quick learner & experience of working in a collaborated team as well independently have enabled successful project outcome. 
         I am resilient to any changes as the world is continuously evolving and so should we." imgSrc={`${process.env.PUBLIC_URL}/gifs/think.webm`} />
@@ -71,7 +73,7 @@ const About = () => {
       </section>
 
       {/* Journey section start */}
-      <section className="flex flex-col gap-3 p-2 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">        
+      <section className="flex flex-col gap-3 p-2 border border-gray-600 mx-auto my-10 max-w-6xl h-auto rounded-lg">
         <SectionHeader title="the journey" subtitle="Humble beginnings to mastering tech: my evolving path" description="This timeline highlights a clear progression from early curiosity in coding to professional expertise in full stack development.It showcases key milestones in education, hands‑on projects, and industry roles, reflecting consistent growth, adaptability, and a commitment to building scalable, innovative solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/journey.webm`} />
         <div className="w-full mx-auto space-y-4 my-4">
           <JourneyComponent year="2015" headerText="Class 10th" descriptionText="Growing up, I was always curious about technology, but it was in 10th grade, through my cousins, that I was introduced to coding. They sparked my interest, and that’s when I decided to explore Python. Since then, I’ve been hooked, diving deeper into the world of coding and development." />

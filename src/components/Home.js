@@ -1,8 +1,10 @@
-import { useState,memo} from "react";
+import { useState, memo } from "react";
+
 import { QRCode } from "react-qr-code";
-import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";  
-import { FaDownload, IoQrCodeOutline } from "../icons";  
+import { QrModal, CvFormatDownloadModal } from "../sub-components/Model";
+import { FaDownload, IoQrCodeOutline } from "../icons";
 import { HeroSection, TechStackSection, ExperienceSection, SkillsSection, CertificatesSection } from "../sub-components/Home";
+import { HeadElement } from "../sub-components/HeadElement";
 
 const RESUME_QR_VALUE =
   "https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link";
@@ -13,9 +15,11 @@ const Home = () => {
   const [isCvFormatOpen, setIsCvFormatOpen] = useState(false);
 
   return (
-    <>  
-      <HeroSection onCvClick={() => setIsCvFormatOpen(true)} onQrClick={() => setIsQrOpen(true)} />
+    <>
+      <HeadElement pageurl="/" pagetitle="Home" pagedescription="Abhishek Kumar's portfolio showcasing full‑stack development, React, Blazor, and modern UI/UX projects with optimized, accessible design." />
 
+      <HeroSection onCvClick={() => setIsCvFormatOpen(true)} onQrClick={() => setIsQrOpen(true)} />
+      
       <QrModal isOpen={isQrOpen} onClose={() => setIsQrOpen(false)}>
         <IoQrCodeOutline className="w-8 h-auto my-4 text-[#0abde3]" />
         <h1 className="text-lg font-bold font-openSans text-white">Scan QR Code</h1>

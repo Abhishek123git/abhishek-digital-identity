@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RxDotFilled } from "../icons";
 import { SectionHeader, UIProjectSection, APIProjectSection, MVCProjectSection } from "../sub-components/Projects";
+import { HeadElement } from "../sub-components/HeadElement";
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("UI/UX");
 
   return (
     <>
+    <HeadElement pageurl="projects" pagetitle="Projects" pagedescription="Explore Abhishek Kumar's portfolio projects built with React, Blazor, ASP.NET, and modern UI/UX practices. See real‑world applications that demonstrate his expertise in scalable, accessible, and high‑performance web development." />
       <section className="flex justify-center flex-col px-2 md:px-10 py-4 w-full mx-auto min-h-[42vh] text-white">
         <h2 className="text-2xl md:text-6xl font-bold text-center">Crafting Digital Realities</h2>
         <p className="text-sm font-openSans md:text-2xl mt-6 text-center">Witness the evolution of ideas into impactful creations—one line of code at a time.</p>

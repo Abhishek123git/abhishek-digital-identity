@@ -7,6 +7,7 @@ import { SectionHeader, SocialMediaSection } from "../sub-components/Contact";
 import { SuccessModal } from "../sub-components/Model";
 import { useContactForm } from "../hooks/useContactForm";
 import FileDropzone from "../components/FileDropzone";
+import { HeadElement } from "../sub-components/HeadElement";
 
 const EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com)$/;
 const NAME_PATTERN = /^[A-Za-z]+(?:\s[A-Za-z]+)?$/;
@@ -27,7 +28,7 @@ const Contact = () => {
   const onSubmit = async (data) => {
     const result = await send(data);
     if (result.ok) {
-      reset();           
+      reset();
     }
   };
 
@@ -38,6 +39,7 @@ const Contact = () => {
 
   return (
     <>
+      <HeadElement pageurl="contact" pagetitle="Contact" pagedescription="Get in touch with Abhishek Kumar, a full‑stack developer specializing in React, Blazor, ASP.NET, and modern UI/UX. Reach out for collaborations, project inquiries, or professional opportunities." />
       <section className="flex items-center justify-center flex-col px-2 md:px-10 py-16 min-h-[55vh] mb-6 text-center text-white">
         <p className="text-2xl md:text-6xl font-serif font-bold text-center">Get to Know Me Better</p>
         <p className="text-sm font-openSans md:text-2xl py-px mt-6 text-center">Explore my interests, my journey as a programmer, why I chose this field, everything 101.</p>
@@ -63,7 +65,7 @@ const Contact = () => {
             </div>
             <div className="flex justify-end flex-auto">
               <div className="p-3 bg-[#dfe6e9] rounded-xl hover:scale-105 transition-transform duration-300">
-                <img src={`${process.env.PUBLIC_URL}/images/contact-qr-code.webp`} width={160}  height={160} alt="QR" loading="lazy" />
+                <img src={`${process.env.PUBLIC_URL}/images/contact-qr-code.webp`} width={160} height={160} alt="QR" loading="lazy" />
               </div>
             </div>
           </div>
