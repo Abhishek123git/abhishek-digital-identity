@@ -1,47 +1,114 @@
-import { Link } from "react-router-dom";
-import { RiHomeSmileLine, CgProfile, GrPhone, SiReaddotcv, FaGithub, FaProjectDiagram } from "../icons";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { RiHomeSmileLine, CgProfile, GrPhone, SiReaddotcv, FaGithub, FaProjectDiagram, HiMenu, HiX } from "../icons";
+
 const dataObject = [
     {
         name: "Home",
         link: "/",
+        external: false,
         icon: <RiHomeSmileLine className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#eb2f06]" aria-label="Home icon" />
     },
     {
         name: "About",
         link: "about",
+        external: false,
         icon: <CgProfile className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#1B1464]" aria-label="About icon" />
     },
     {
         name: "Projects",
         link: "projects",
+        external: false,
         icon: <FaProjectDiagram className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#6D214F]" aria-label="Projects icon" />
     },
     {
         name: "Resume",
         link: "https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link",
+        external: true,
         icon: <SiReaddotcv className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#d35400]" aria-label="Read CV icon" />
     },
     {
         name: "Contact",
         link: "contact",
+        external: false,
         icon: <GrPhone className="w-5 h-auto mr-2 inline-block group-hover:text-[#009432] animate-pingSmall" aria-label="Contact icon" />
     },
     {
         name: "Fork Project",
         link: "https://github.com/Abhishek123git/abhishek-digital-identity",
+        external: true,
         icon: <FaGithub className="w-5 h-auto mr-2 inline-block group-hover:text-black" aria-label="Fork Project icon" />
     }
 ];
 
-export function MenuList() {
+// Shared item class for both desktop and mobile
+const ITEM_CLASS = "flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors duration-300 hover:bg-gray-100 group";
+
+function MenuItem({ item, onClick }) {
+  const content = (
+    <div className="flex items-center gap-2 text-white">
+      {item.icon}
+      <span className="transition-colors duration-300 group-hover:text-purple-400">
+        {item.name}
+      </span>
+    </div>
+  );
+
+  if (item.external) {
     return (
-        <div className="h-full flex flex-row items-center gap-1">
-            {dataObject.map((item, index) => (
-                <Link key={index} className="flex items-center group text-md font-semibold font-openSans rounded-md py-1 px-2 hover:bg-[#d0f0f0] transition-colors duration-300" to={item.link}>
-                    {item.icon}
-                    <span className="transition-colors duration-300 group-hover:text-purple-400">{item.name}</span>
-                </Link>
-            ))}
+      <a
+        className={ITEM_CLASS}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <NavLink
+      to={item.link}
+      onClick={onClick}
+      className={({ isActive }) =>
+        `${ITEM_CLASS} text-gray-700 ${isActive ? "bg-black text-purple-600" : "bg-black"}`
+      }
+    >
+      {content}
+    </NavLink>
+  );
+}
+
+
+export function MenuList() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const closeMenu = () => setIsOpen(false);
+
+    return (
+        <div className="relative">
+            {/* Mobile toggle button */}
+            <button type="button" className="md:hidden flex items-center justify-center p-2 rounded-md hover:bg-[#d0f0f0] transition-colors duration-300" onClick={() => setIsOpen((prev) => !prev)} aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen} >
+                {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
+            </button>
+
+            {/* Desktop menu */}
+            <div className="hidden md:flex h-full flex-row items-center gap-1">
+                {dataObject.map((item, index) => (
+                    <MenuItem key={index} item={item} />
+                ))}
+            </div>
+
+            {/* Mobile dropdown menu */}
+            {isOpen && (
+                <div className="md:hidden absolute top-full right-0 mt-2 w-56 flex flex-col gap-1 bg-white rounded-lg shadow-lg p-2 z-50">
+                    {dataObject.map((item, index) => (
+                        <MenuItem key={index} item={item} onClick={closeMenu} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

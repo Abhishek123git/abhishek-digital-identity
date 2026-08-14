@@ -17,3 +17,4 @@ export { ImArrowRight } from "react-icons/im"; //Arrow Right
 export { GiCheckMark, GiArchiveRegister  } from "react-icons/gi"; //Check Mark
 export { FaProjectDiagram } from "react-icons/fa"; //Project Diagram
 export { RxDotFilled } from "react-icons/rx";
+export { HiMenu, HiX } from "react-icons/hi";
