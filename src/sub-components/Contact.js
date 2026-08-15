@@ -1,3 +1,4 @@
+import { useEffect, useRef, memo } from "react";
 import { Link } from "react-router-dom";
 import { LuLinkedin, PiMouseMiddleClickDuotone, FaGithub, BiLogoGmail } from "../icons";
 
@@ -29,40 +30,60 @@ const myObject = [
 ];
 
 // Section header component for displaying title, subtitle, description, and an image
-export function SectionHeader({ title, subtitle, description, imgSrc }) {
+export const SectionHeader = memo(function SectionHeader({ title, subtitle, description, imgSrc }) {
+  const videoRef = useRef(null);
+ 
+  useEffect(() => {    
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches && videoRef.current) {
+      videoRef.current.pause();
+    }
+  }, []);
+ 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-3 sm:gap-4 px-4 text-center">
       <p className="text-2xl md:text-4xl text-purple-500 uppercase">{title}</p>
       <p className="text-sm md:text-lg lg:text-xl text-white font-ubuntu font-medium">{subtitle}</p>
-      <p className="text-white/70 text-sm md:text-md font-normal font-openSans text-center">{description}</p>
-      <video className="rounded-full" src={imgSrc} playsInline autoPlay loop muted aria-hidden="true" />
+      <p className="text-white/70 text-sm md:text-base font-normal font-openSans text-center max-w-2xl">
+        {description}
+      </p>
+      <video ref={videoRef} className="rounded-full" src={imgSrc} playsInline autoPlay loop muted preload="metadata" aria-hidden="true" />
     </div>
   );
-}
-
-export function SocialMediaSection() {
-    return (
-        <div className="flex justify-center items-center px-2 py-4 text-base gap-2">
-            {myObject.map((item, index) => (
-                <div key={index} className="flex-1 flex flex-col items-center p-3 rounded-xl border border-gray-400 bg-black">
-                    <div className="w-full rounded-xl bg-transparent mx-auto my-2">
-                        <div className="flex basis-full flex-col p-4 w-full h-auto ">
-                            <p className="w-full !pb-2 !m-0 font-bold flex flex-row justify-between">{item.title}
-                                {item.icon1}
-                            </p>
-                            <div className="flex flex-row my-3 justify-between">
-                                <span className="text-slate-400 py-2">{item.subtitle}</span>
-                                <Link className="flex justify-center items-center border-2 border-dashed rounded-[50%] p-2 h-auto w-10 hover:border hover:border-[#fffa65] hover:shadow-[0_0_5px_white,0_0_5px_white] transition-all duration-300 ease-in-out" aria-label={`Visit my ${item.title} profile`} to={item.link} target="_blank" rel="noreferrer">
-                                    {item.icon2}
-                                </Link>
-                            </div>
-                            <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
-                                <img width={600} height={400} className="w-full h-auto rounded-lg " alt={item.title} src={item.src} loading="lazy" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ))}
+});
+ 
+const SocialCard = memo(function SocialCard({ item }) {
+  return (
+    <div className="flex flex-col items-center p-3 rounded-xl border border-gray-400 bg-black w-full">
+      <div className="w-full rounded-xl bg-transparent mx-auto my-2">
+        <div className="flex basis-full flex-col p-3 sm:p-4 w-full h-auto">
+          <p className="w-full !pb-2 !m-0 font-bold flex flex-row items-center justify-between gap-2">
+            {item.title}
+            {item.icon1}
+          </p>
+          <div className="flex flex-row items-center gap-2 my-3 justify-between">
+            <span className="text-slate-400 py-2 text-sm sm:text-base">{item.subtitle}</span>
+            <Link className="flex justify-center items-center shrink-0 border-2 border-dashed rounded-full p-2 h-10 w-10 hover:border hover:border-[#fffa65] hover:shadow-[0_0_5px_white,0_0_5px_white] transition-all duration-300 ease-in-out motion-reduce:transition-none motion-reduce:hover:shadow-none" aria-label={`Visit my ${item.title} profile`}
+              to={item.link} target="_blank" rel="noreferrer"
+            >
+              {item.icon2}
+            </Link>
+          </div>
+          <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500">
+            <img width={600} height={400} className="w-full h-auto rounded-lg" alt={item.title} src={item.src} loading="lazy" decoding="async" />
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
+});
+ 
+export function SocialMediaSection() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-4 sm:px-6 py-4 text-base">
+      {myObject.map((item) => (
+        <SocialCard key={item.title} item={item} />
+      ))}
+    </div>
+  );
 }

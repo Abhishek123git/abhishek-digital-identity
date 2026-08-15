@@ -87,7 +87,7 @@ const About = () => {
       {/* Journey section end */}
 
       {/* Coding Milestones start */}
-      <section className="grid grid-rows-[auto_auto] gap-2 p-3 border border-gray-600 mx-auto my-6 sm:my-10 max-w-6xl h-auto rounded-lg">
+      <section className="grid grid-rows-[auto_auto] gap-2 p-3 border border-gray-600 mx-auto my-6 sm:my-10 max-w-6xl w-full h-auto rounded-lg">
         <SectionHeader title="Coding Milestones" subtitle="Validated skills through coding challenges and contests" description="A showcase of my journey through leading coding platforms, where consistent practice and competitive challenges have validated my problem‑solving skills. From tackling algorithmic puzzles on LeetCode, earning badges on HackerRank, and competing in CodeChef contests, to exploring concepts on GeeksforGeeks — each milestone reflects dedication, growth, and a commitment to mastering the craft of programming.This timeline highlights a clear progression from early curiosity in coding to professional expertise in full stack development.It showcases key milestones in education, hands‑on projects, and industry roles, reflecting consistent growth, adaptability, and a commitment to building scalable, innovative solutions." imgSrc={`${process.env.PUBLIC_URL}/gifs/coding.webm`} />
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-2 p-3 w-full mx-auto">
           <CodingMilestones alt="LeetCode" src={`${process.env.PUBLIC_URL}/images/leetcode.webp`} link="https://leetcode.com/u/abhishek1445747/" />

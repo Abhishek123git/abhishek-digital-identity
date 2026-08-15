@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import DesktopOnlyGate from "./DesktopOnlyGate";
 import './index.css';
 import App from './App';
 
@@ -13,10 +12,8 @@ if (redirect && redirect !== window.location.pathname) {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <DesktopOnlyGate> */}
+  <React.StrictMode>   
     <App />
-    {/* </DesktopOnlyGate>       */}
   </React.StrictMode>
 );
 

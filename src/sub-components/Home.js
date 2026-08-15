@@ -119,7 +119,7 @@ export const HeroSection = ({ onCvClick, onQrClick }) => (
         <a className="underline decoration-emerald-500 underline-offset-2 hover:text-emerald-500 hover:no-underline hover:decoration-white" href="/contact"> Let&apos;s create something great together!</a>
       </div>
       <div className="order-1 md:order-2 flex justify-center items-center">
-        <img className="rounded-full w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-[358px] lg:h-[358px] object-cover" src={`${ASSET_BASE}/images/Abhishek_pro.webp`} alt="Portrait of Abhishek Kumar" width={358} height={358} loading="lazy" />
+        <img className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-[358px] lg:h-[358px] object-cover" src={`${ASSET_BASE}/images/developer.svg`} alt="Portrait of Abhishek Kumar" width={358} height={358} loading="lazy" />
       </div>
     </div>
 

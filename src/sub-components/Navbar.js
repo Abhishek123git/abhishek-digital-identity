@@ -42,7 +42,7 @@ const dataObject = [
 ];
 
 // Shared item class for both desktop and mobile
-const ITEM_CLASS = "flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors duration-300 hover:bg-gray-100 group";
+const ITEM_CLASS = "flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors duration-300 hover:bg-gray-100 group text-white text-gray-700 bg-black";
 
 function MenuItem({ item, onClick }) {
   const content = (
@@ -69,13 +69,7 @@ function MenuItem({ item, onClick }) {
   }
 
   return (
-    <NavLink
-      to={item.link}
-      onClick={onClick}
-      className={({ isActive }) =>
-        `${ITEM_CLASS} text-gray-700 ${isActive ? "bg-black text-purple-600" : "bg-black"}`
-      }
-    >
+    <NavLink to={item.link} onClick={onClick} className={({ isActive }) =>`${ITEM_CLASS} text-gray-700 ${isActive ? "bg-black text-purple-600" : ""}`} >
       {content}
     </NavLink>
   );

@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="flex space-x-6">
               <Link to="https://github.com/Abhishek123git/" target="_blank" className="group relative">
                 <div className="relative">
-                  <PiGithubLogoDuotone className="w-6 h-auto group-hover:text-black" />
+                  <PiGithubLogoDuotone className="w-6 h-auto group-hover:text-gray-500" />
                   <span className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-gray-400 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:text-white whitespace-nowrap">
                     GitHub
                   </span>
