@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import PerformanceReport from "./components/PerformanceReport";
 import NotFound from "./components/NotFound";
 
 function App() {
@@ -21,9 +22,10 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/abhishek-digital-identity" element={<Home />} />
-                <Route path="about" element={<About />} />
-                <Route path="projects" element={<Projects />} />
-                <Route path="contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/contact" element={<Contact />} /> 
+                <Route path="/performance-reports" element={<PerformanceReport />} />               
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

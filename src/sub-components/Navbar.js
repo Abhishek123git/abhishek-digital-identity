@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { RiHomeSmileLine, CgProfile, GrPhone, SiReaddotcv, FaGithub, FaProjectDiagram, HiMenu, HiX } from "../icons";
+import { RiHomeSmileLine, CgProfile, GrPhone, SiReaddotcv, FaGithub, FaProjectDiagram, CgMoreVerticalO, GrDocumentPerformance, HiMenu, HiX } from "../icons";
 
 const dataObject = [
     {
@@ -22,22 +22,19 @@ const dataObject = [
         icon: <FaProjectDiagram className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#6D214F]" aria-label="Projects icon" />
     },
     {
-        name: "Resume",
-        link: "https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link",
-        external: true,
-        icon: <SiReaddotcv className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#d35400]" aria-label="Read CV icon" />
-    },
-    {
         name: "Contact",
         link: "contact",
         external: false,
-        icon: <GrPhone className="w-5 h-auto mr-2 inline-block group-hover:text-[#009432] animate-pingSmall" aria-label="Contact icon" />
+        icon: <GrPhone className="w-5 h-auto mr-2 inline-block group-hover:text-[#009432]" aria-label="Contact icon" />
     },
     {
-        name: "Fork Project",
-        link: "https://github.com/Abhishek123git/abhishek-digital-identity",
-        external: true,
-        icon: <FaGithub className="w-5 h-auto mr-2 inline-block group-hover:text-black" aria-label="Fork Project icon" />
+        name: "More",
+        dropdown: [
+            { name: "Performance Reports", link: "performance-reports", external: false, icon: <GrDocumentPerformance className="w-5 h-auto mr-2 inline-block transition-colors duration-300 group-hover:text-[#eb2f06]" aria-label="Report icon" /> },
+            { name: "Resume", link: "https://drive.google.com/file/d/1s1Jsu3bou6dzK3WqIyYiwGSMzCDGt6nE/view?usp=drive_link", external: false, icon: <SiReaddotcv className="w-5 h-auto mr-2 inline-block transition-colors duration-300 group-hover:text-[#d35400]" aria-label="Read CV icon" /> },
+            { name: "Fork Project", link: "https://github.com/Abhishek123git/abhishek-digital-identity", external: true, icon: <FaGithub className="w-5 h-auto mr-2 inline-block group-hover:text-black" aria-label="Fork Project icon" /> }
+        ],
+        icon: <CgMoreVerticalO className="w-5 h-auto mr-1 inline-block transition-colors duration-300 group-hover:text-[#6D214F]" aria-label="More icon" />
     }
 ];
 
@@ -45,34 +42,48 @@ const dataObject = [
 const ITEM_CLASS = "flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors duration-300 hover:bg-gray-100 group text-white text-gray-700 bg-black";
 
 function MenuItem({ item, onClick }) {
-  const content = (
-    <div className="flex items-center gap-2 text-white">
-      {item.icon}
-      <span className="transition-colors duration-300 group-hover:text-purple-400">
-        {item.name}
-      </span>
-    </div>
-  );
+    const [open, setOpen] = useState(false);
 
-  if (item.external) {
+    if (item.dropdown) {
+        return (
+            <div className="relative group">
+                <button className={`${ITEM_CLASS} w-full text-white`} onClick={() => setOpen((prev) => !prev)} >
+                    {item.icon}
+                    <span>{item.name}</span>
+                </button>
+                {open && (
+                    <div className="absolute -left-24 mt-2 w-auto bg-white rounded-md shadow-lg flex flex-col">
+                        {item.dropdown.map((subItem, idx) => (
+                            (subItem.name === "Fork Project" || subItem.name === "Resume") ? (
+                                <NavLink key={idx} to={subItem.link} onClick={onClick} target="_blank" className="px-3 py-2 hover:bg-gray-100 text-gray-700 text-nowrap flex items-center" >
+                                    {subItem.icon}
+                                    <span>{subItem.name}</span>
+                                </NavLink>
+                            ) : (
+                                <NavLink key={idx} to={subItem.link} onClick={onClick} className="px-3 py-2 hover:bg-gray-100 text-gray-700 text-nowrap flex items-center" >
+                                    {subItem.icon}
+                                    <span>{subItem.name}</span>
+                                </NavLink>
+                            )
+                        ))}
+                    </div>
+                )}
+            </div>
+        );
+    }
+
+    if (item.external) {
+        return (
+            <a className={`${ITEM_CLASS} bg-black text-white`} href={item.link} target="_blank" rel="noopener noreferrer" onClick={onClick} >{item.icon}<span>{item.name}</span></a>
+        );
+    }
+
     return (
-      <a
-        className={ITEM_CLASS}
-        href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={onClick}
-      >
-        {content}
-      </a>
+        <NavLink to={item.link} onClick={onClick} className={({ isActive }) => `${ITEM_CLASS} text-gray-700 ${isActive ? "bg-black text-purple-600" : ""}`} >
+            {item.icon}
+            <span>{item.name}</span>
+        </NavLink>
     );
-  }
-
-  return (
-    <NavLink to={item.link} onClick={onClick} className={({ isActive }) =>`${ITEM_CLASS} text-gray-700 ${isActive ? "bg-black text-purple-600" : ""}`} >
-      {content}
-    </NavLink>
-  );
 }
 
 

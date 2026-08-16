@@ -7,6 +7,7 @@ export default (
     <Route path="/abhishek-digital-identity" />
     <Route path="/about" />
     <Route path="/projects" />
-    <Route path="/contacts" />       
+    <Route path="/contacts" />     
+    <Route path="/performance-reports" />  
   </Route>
 );

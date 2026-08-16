@@ -10,6 +10,7 @@ const links = [
   { url: '/about', changefreq: 'monthly', priority: 0.8 },
   { url: '/projects', changefreq: 'monthly', priority: 0.8 },
   { url: '/contacts', changefreq: 'monthly', priority: 0.7 },
+  { url: '/performance-reports', changefreq: 'monthly', priority: 0.7 }
 ];
 
 const sitemap = new SitemapStream({ hostname });

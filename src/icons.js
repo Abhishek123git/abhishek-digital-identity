@@ -1,5 +1,5 @@
-export { CgMail, CgProfile, CgMoreO } from "react-icons/cg"; //Mail Profile More Options
-export { GrPhone, GrReactjs, GrDocumentWord } from "react-icons/gr"; //Phone ReactJS Word Document
+export { CgMail, CgProfile, CgMoreO, CgMoreVerticalO } from "react-icons/cg"; //Mail Profile More Options
+export { GrPhone, GrReactjs, GrDocumentWord, GrDocumentPerformance } from "react-icons/gr"; //Phone ReactJS Word Document
 export { FaFilePdf, FaDownload, FaBootstrap, FaGithub } from "react-icons/fa6"; //PDF, Download, Bootstrap, GitHub
 export { SiLeetcode, SiHackerrank, SiCodechef, SiReaddotcv, SiJira } from "react-icons/si"; //LeetCode, HackerRank, CodeChef, Read.cv, Jira
 export { IoLocationOutline, IoQrCodeOutline } from "react-icons/io5"; //Location QR Code
