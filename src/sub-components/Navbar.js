@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RiHomeSmileLine, CgProfile, GrPhone, SiReaddotcv, FaGithub, FaProjectDiagram, CgMoreVerticalO, GrDocumentPerformance, HiMenu, HiX } from "../icons";
 
 const dataObject = [
@@ -39,7 +39,7 @@ const dataObject = [
 ];
 
 // Shared item class for both desktop and mobile
-const ITEM_CLASS = "flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors duration-300 hover:bg-gray-100 group text-white text-gray-700 bg-black";
+const ITEM_CLASS = "flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors duration-300 hover:bg-gray-200 hover:text-black group text-white text-gray-700 bg-black";
 
 function MenuItem({ item, onClick }) {
     const [open, setOpen] = useState(false);
@@ -52,20 +52,30 @@ function MenuItem({ item, onClick }) {
                     <span>{item.name}</span>
                 </button>
                 {open && (
-                    <div className="absolute -left-24 mt-2 w-auto bg-white rounded-md shadow-lg flex flex-col">
-                        {item.dropdown.map((subItem, idx) => (
-                            (subItem.name === "Fork Project" || subItem.name === "Resume") ? (
-                                <NavLink key={idx} to={subItem.link} onClick={onClick} target="_blank" className="px-3 py-2 hover:bg-gray-100 text-gray-700 text-nowrap flex items-center" >
+                    <div className="absolute -left-24 mt-2 w-auto bg-white rounded-md shadow-lg flex flex-col p-1">
+                        {item.dropdown.map((subItem, idx) => {
+                            const commonProps = {
+
+                                to: subItem.link,
+                                onClick: () => {
+                                    if (onClick) onClick();   // closes mobile menu
+                                    setOpen(false);           // closes More dropdown
+                                },
+                                className: "px-3 py-2 hover:bg-gray-100 hover:rounded text-gray-700 text-nowrap flex items-center",
+                            };
+
+                            return subItem.external ? (
+                                <Link key={subItem.name} to={subItem.link} target="_blank" rel="noopener noreferrer" {...commonProps} >
                                     {subItem.icon}
                                     <span>{subItem.name}</span>
-                                </NavLink>
+                                </Link>
                             ) : (
-                                <NavLink key={idx} to={subItem.link} onClick={onClick} className="px-3 py-2 hover:bg-gray-100 text-gray-700 text-nowrap flex items-center" >
+                                <NavLink key={idx} {...commonProps}>
                                     {subItem.icon}
                                     <span>{subItem.name}</span>
                                 </NavLink>
-                            )
-                        ))}
+                            );
+                        })}
                     </div>
                 )}
             </div>
@@ -101,16 +111,16 @@ export function MenuList() {
 
             {/* Desktop menu */}
             <div className="hidden md:flex h-full flex-row items-center gap-1">
-                {dataObject.map((item, index) => (
-                    <MenuItem key={index} item={item} />
+                {dataObject.map((item) => (
+                    <MenuItem key={item.name} item={item} />
                 ))}
             </div>
 
             {/* Mobile dropdown menu */}
             {isOpen && (
                 <div className="md:hidden absolute top-full right-0 mt-2 w-56 flex flex-col gap-1 bg-white rounded-lg shadow-lg p-2 z-50">
-                    {dataObject.map((item, index) => (
-                        <MenuItem key={index} item={item} onClick={closeMenu} />
+                    {dataObject.map((item) => (
+                        <MenuItem key={item.name} item={item} onClick={closeMenu} />
                     ))}
                 </div>
             )}

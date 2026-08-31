@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { HeadElement } from "../sub-components/HeadElement";
+import { Link } from "react-router-dom";
 
 const PSI_ENDPOINT = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed";
 const DEFAULT_URL = "https://www.abhishekportfolio.com/";
@@ -70,40 +71,17 @@ const Gauge = React.memo(function Gauge({ label, score, delay = 0 }) {
       <div className="relative w-20 h-20 sm:w-28 sm:h-28">
         <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90" aria-hidden="true">
           <circle cx="50" cy="50" r={R} fill="none" stroke="#1A2230" strokeWidth="7" />
-          <circle
-            cx="50"
-            cy="50"
-            r={R}
-            fill="none"
-            stroke={colors.ring}
-            strokeWidth="7"
-            strokeLinecap="round"
-            strokeDasharray={C}
-            strokeDashoffset={offset}
-            style={{ transition: "stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1)" }}
-          />
+          <circle cx="50" cy="50" r={R} fill="none" stroke={colors.ring} strokeWidth="7" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={offset} style={{ transition: "stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1)" }} />
           {Array.from({ length: 24 }).map((_, i) => {
             const angle = (i / 24) * 360;
             const isMajor = i % 6 === 0;
             return (
-              <line
-                key={i}
-                x1="50"
-                y1={isMajor ? "4" : "6"}
-                x2="50"
-                y2="9"
-                stroke="#2A3444"
-                strokeWidth={isMajor ? "1.2" : "0.6"}
-                transform={`rotate(${angle} 50 50)`}
-              />
+              <line key={i} x1="50" y1={isMajor ? "4" : "6"} x2="50" y2="9" stroke="#2A3444" strokeWidth={isMajor ? "1.2" : "0.6"} transform={`rotate(${angle} 50 50)`} />
             );
           })}
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span
-            className="font-mono text-lg sm:text-2xl font-semibold tabular-nums"
-            style={{ color: colors.fg }}
-          >
+          <span className={`font-mono text-lg sm:text-2xl font-semibold tabular-nums text-[${colors.fg}]`} >
             {score === null || score === undefined ? "—" : animated}
           </span>
           <span className="text-[8px] sm:text-[9px] tracking-[0.12em] text-[#5B6675] font-mono mt-0.5">
@@ -125,10 +103,7 @@ const CwvCard = React.memo(function CwvCard({ audit }) {
   return (
     <div className="flex items-center justify-between gap-3 py-3 px-3.5 sm:px-4 rounded-lg bg-[#121821] border border-[#1E2733]">
       <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
-        <span
-          className="font-mono text-[10px] px-1.5 py-0.5 rounded border shrink-0"
-          style={{ color: colors.fg, borderColor: colors.fg + "55", background: colors.bg }}
-        >
+        <span className={`font-mono text-[10px] px-1.5 py-0.5 rounded border shrink-0 text-[${colors.fg}] border-[${colors.fg}55] bg-[${colors.bg}]`} >
           {audit.abbr}
         </span>
         <span className="text-[13px] sm:text-sm text-[#C4CCD8] truncate">{audit.label}</span>
@@ -235,7 +210,7 @@ export default function PerformanceReport() {
         }
       `}</style>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-14">
+        <div className="mx-auto px-4 sm:px-8 py-8 sm:py-14">
           {/* Header */}
           <div className="mb-8 sm:mb-10">
             <div className="flex items-center gap-2 mb-2">
@@ -245,8 +220,8 @@ export default function PerformanceReport() {
               </span>
             </div>
             <p className="font-sans text-lg sm:text-4xl font-semibold tracking-tight text-gray-100">Performance Report</p>
-            <p className="text-[#7C8797] text-xs sm:text-sm mt-1.5">
-              PageSpeed Insights &amp; Lighthouse, fetched in real time.
+            <p className="text-[#919eb1] text-xs sm:text-sm mt-2">
+              Run full PSI & Lighthouse audits directly in‑app, with Core Web Vitals, render breakdowns, and optimization metrics in a branded.
             </p>
           </div>
 
@@ -254,7 +229,6 @@ export default function PerformanceReport() {
           <form onSubmit={onSubmit} className="mb-8">
             <div className="relative rounded-xl border border-[#1E2733] bg-[#0E141B] p-1.5 flex flex-col sm:flex-row gap-1.5">
               <div className="flex items-center gap-2 flex-1 px-3.5 py-2.5 rounded-lg bg-[#121821]">
-                <span className="font-mono text-[#4FD1C5] text-sm select-none">$</span>
                 <input value={url} onChange={(e) => setUrl(e.target.value)} placeholder="example.com" aria-label="Website URL to audit" className="bg-transparent outline-none flex-1 font-mono text-sm text-[#E7ECF2] placeholder:text-[#4A5563] min-w-0" spellCheck={false} autoCapitalize="off"autoCorrect="off" />
               </div>
               <div className="flex gap-1.5">
@@ -265,11 +239,7 @@ export default function PerformanceReport() {
                     </button>
                   ))}
                 </div>
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="px-4 sm:px-5 py-2.5 rounded-lg bg-[#4FD1C5] text-[#08110F] text-sm font-semibold hover:bg-[#6BDBD1] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
-                >
+                <button type="submit" disabled={status === "loading"} className="px-4 sm:px-5 py-2.5 rounded-lg bg-[#4FD1C5] text-[#08110F] text-sm font-semibold hover:bg-[#6BDBD1] transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap" >
                   {status === "loading" ? "Running…" : "Run report"}
                 </button>
               </div>
@@ -287,31 +257,16 @@ export default function PerformanceReport() {
 
             {showKeyField && (
               <div className="mt-2 rounded-lg border border-[#1E2733] bg-[#0E141B] p-3.5">
-                <label
-                  htmlFor="psi-api-key"
-                  className="block font-mono text-[10px] tracking-wide text-[#5B6675] uppercase mb-1.5"
-                >
+                <label htmlFor="psi-api-key" className="block font-mono text-[10px] tracking-wide text-[#5B6675] uppercase mb-1.5" >
                   Google PageSpeed Insights API key (optional)
                 </label>
-                <input id="psi-api-key" type="password"
-                  value={apiKey}
-                  onChange={(e) => setApiKey(e.target.value)}
-                  placeholder="AIza…"
-                  className="w-full bg-[#121821] rounded-md px-3 py-2 font-mono text-xs text-[#E7ECF2] placeholder:text-[#4A5563] outline-none border border-[#1E2733] focus:border-[#4FD1C5]"
-                  spellCheck={false}
-                  autoComplete="off"
-                />
+                <input id="psi-api-key" type="password" value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="AIza…" className="w-full bg-[#121821] rounded-md px-3 py-2 font-mono text-xs text-[#E7ECF2] placeholder:text-[#4A5563] outline-none border border-[#1E2733] focus:border-[#4FD1C5]" spellCheck={false} autoComplete="off" />
                 <p className="text-[11px] text-[#5B6675] mt-2 leading-relaxed">
                   The shared/anonymous quota for this API runs out fast. A free key of your own removes that limit —
                   get one at{" "}
-                  <a
-                    href="https://developers.google.com/speed/docs/insights/v5/get-started"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[#4FD1C5] hover:underline"
-                  >
+                  <Link to="https://developers.google.com/speed/docs/insights/v5/get-started" target="_blank" rel="noreferrer" className="text-[#4FD1C5] hover:underline" >
                     developers.google.com/speed/docs/insights
-                  </a>
+                  </Link>
                   , enable "PageSpeed Insights API" for your project, then paste the key here. It's kept only in this
                   browser session — never hardcode a key into source code, since it ships to every visitor.
                 </p>
@@ -322,11 +277,7 @@ export default function PerformanceReport() {
           {/* Loading state */}
           {status === "loading" && (
             <div className="scan-sweep rounded-xl border border-[#1E2733] bg-[#0E141B] p-8 sm:p-12 flex flex-col items-center gap-4">
-              <div
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-[#1E2733] border-t-[#4FD1C5] animate-spin"
-                role="status"
-                aria-label="Loading"
-              />
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-[#1E2733] border-t-[#4FD1C5] animate-spin" role="status" aria-label="Loading" />
               <p className="font-mono text-[11px] sm:text-xs text-[#5B6675] tracking-wide text-center px-4">
                 running audit on {url.replace(/^https?:\/\//, "")}…
               </p>
