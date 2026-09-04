@@ -2,6 +2,7 @@ import { useState, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { RxDotFilled } from "../icons";
 import { SectionHeader } from "../sub-components/Projects";
+import LiveProjects from "./LiveProjects";
 import { HeadElement } from "../sub-components/HeadElement";
 
 const UIProjectSection = lazy(() =>
@@ -28,6 +29,12 @@ const HIGHLIGHTS = [
   "Active social links on profile signal openness to networking, collaboration, and visibility in the dev community",
 ];
 
+const mySteps = [
+  { label: "Select campaign settings", description: "..." },
+  { label: "Create an ad group", description: "..." },
+  { label: "Create an ad", description: "...", lastStep: true },
+];
+
 function ProjectSectionFallback() {
   return (
     <div className="w-full flex justify-center py-10 text-gray-400 text-sm">
@@ -49,7 +56,7 @@ const Projects = () => {
         <p className="text-sm font-openSans md:text-2xl mt-6 text-center px-2">Witness the evolution of ideas into impactful creations—one line of code at a time.</p>
       </section>
 
-      <section className="flex justify-center items-center flex-col px-2 mt-16 sm:mt-24 md:mt-[100px] mb-10 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">
+      <section className="flex justify-center items-center flex-col px-2s mb-10 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">
         <SectionHeader title="My Projects" subtitle="Crafting each project like an artisan shaping their masterpiece" description="A showcase of my recent projects and contributions to the tech world." imgSrc={`${process.env.PUBLIC_URL}/gifs/project.webm`} />
 
         <div className="flex justify-center flex-wrap gap-4 w-full max-w-6xl h-auto p-2 sm:p-4">
@@ -72,6 +79,11 @@ const Projects = () => {
             )}
           </div>
         </div>
+      </section>
+
+      <section className="flex justify-center items-center flex-col px-2 mb-10 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">
+        <SectionHeader title="Live Hosted Projects" subtitle="Turning ideas into impactful, production‑ready solutions" description="Dive into live projects that blend creativity with technology. Each one is a proof of concept turned into reality — designed to inspire, engage, and deliver value in the digital space." imgSrc={`${process.env.PUBLIC_URL}/gifs/project.webm`} />
+        <LiveProjects steps={mySteps} />
       </section>
 
       <section className="flex justify-center items-center flex-col px-2 mb-10 md:px-10 py-4 w-full mx-auto max-w-6xl h-auto text-white">

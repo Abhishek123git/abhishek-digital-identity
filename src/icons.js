@@ -1,7 +1,7 @@
 export { CgMail, CgProfile, CgMoreO, CgMoreVerticalO } from "react-icons/cg"; //Mail Profile More Options
 export { GrPhone, GrReactjs, GrDocumentWord, GrDocumentPerformance } from "react-icons/gr"; //Phone ReactJS Word Document
 export { FaFilePdf, FaDownload, FaBootstrap, FaGithub } from "react-icons/fa6"; //PDF, Download, Bootstrap, GitHub
-export { SiLeetcode, SiHackerrank, SiCodechef, SiReaddotcv, SiJira } from "react-icons/si"; //LeetCode, HackerRank, CodeChef, Read.cv, Jira
+export { SiLeetcode, SiHackerrank, SiCodechef, SiReaddotcv, SiJira, SiMui } from "react-icons/si"; //LeetCode, HackerRank, CodeChef, Read.cv, Jira
 export { IoLocationOutline, IoQrCodeOutline } from "react-icons/io5"; //Location QR Code
 export { PiGithubLogoDuotone, PiMouseMiddleClickDuotone, PiStepsDuotone } from "react-icons/pi"; //Github Logo, Mouse Click
 export { TbBrandCSharp, TbBrandJavascript } from "react-icons/tb"; //C# JavaScript
@@ -9,7 +9,7 @@ export { DiJqueryLogo, DiVisualstudio } from "react-icons/di"; //jQuery/AJAX Vis
 export { BiLogoGmail, BiLogoJava, BiSolidErrorAlt } from "react-icons/bi"; //Gmail Java
 export { LuLinkedin } from "react-icons/lu"; //LinkedIn
 export { FiInstagram } from "react-icons/fi"; //Instagram
-export { RiHomeSmileLine } from "react-icons/ri"; //Home
+export { RiHomeSmileLine, RiReactjsFill, RiTailwindCssFill, RiServiceFill } from "react-icons/ri"; //Home
 export { MdStarPurple500, MdOutlineContactMail } from "react-icons/md"; //Star
 export { BsFillDatabaseFill, BsFillSendArrowUpFill } from "react-icons/bs"; //SQL Server Database, Send message
 export { VscVscode } from "react-icons/vsc"; //VS Code
